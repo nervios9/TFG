@@ -1,0 +1,102 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.logo{
+    height: 100px;
+
+   
+}
+header{
+    background-color: darksalmon;
+    height: 100px;
+}
+.header{
+    display: flex;
+  
+}
+.login {
+    padding-top: 30px;
+    margin-left: auto;
+}
+.register {
+    padding-top: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.login , .register{
+    text-decoration: none; 
+    color: inherit; 
+}
+
+.login:hover , .register:hover{
+    text-decoration: none;
+    color: inherit; 
+}
+.cerrar{
+    padding-top: 45px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.user {
+    padding-top: 30px;
+    margin-left: auto;
+}
+.dropdown-img{
+    height: 20px; 
+}
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown-img:focus + .dropdown-menu,
+.dropdown-menu:hover {
+    display: block;
+}
+.dropdown{
+    display: flex;
+    }
+/* Estilos CSS para la imagen botón */
+.dropdown-img {
+    cursor: pointer;
+}
+
+.dropdown-imgIcono:focus + .dropdown-menuIcono,
+.dropdown-menu:hover {
+    display: block;
+}
+.dropdown-imgIcono {
+    position: absolute;
+    cursor: pointer;
+    height: 40px;
+    top: 0;
+    right: 20px;
+    margin: 20px; /* Ajusta según sea necesario */
+}
+#dropdown-menu{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    top: 40px;
+    right: 20px;
+    margin: 20px;
+}
+.cerrarSesion{
+    pointer-events: auto;
+}
+.config{
+    text-decoration: none;
+}
+.config:hover{
+    text-decoration: none;
+}
