@@ -19,3 +19,5 @@ Route::get('/', function () {
 Route::get('config', function () {
     return view('config');
 });
+Route::get('/all','LibrosController@index');
+Route::get('/show{id}', 'LibrosController@show')->name('show');

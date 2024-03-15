@@ -13,22 +13,17 @@
 
 
 <body>
-@section('header')
+
     <header class="header">
        
-        <div class="dropdown">
-            <img  src="{{ asset('images/menudesplegable.png') }}" alt="iconomenudesplegable" class="dropdown-img" tabindex="0" ></img>
+       
             
-            <div class="dropdown-menu">
-                <a href="#">Opción 1</a><br>
-                <a href="#">Opción 2</a><br>
-                <a href="#">Opción 3</a>
-            </div>
+            
         </div>
         <a href="{{ url('/') }}">
             <img  src="{{ asset('images/Logo.png') }}" alt="Logo" class="logo"></img>
         </a>
-        <h1>&nbsp;&nbsp;Libroteca</h1>  
+        <h1>&nbsp;&nbsp;Libro antes que destino</h1>  
         <?php
        
           ?>
@@ -48,11 +43,59 @@
 
 </div> 
 
+
+<img src="{{ asset('images/menudesplegable.png') }}" alt="Icono de menú" id="icono-menu">
+<nav id="menu-desplegable">
+
+    <a  class="opctionsdesplegable" href="{{ url('/all') }}">Todos los libros</a>
+</nav>
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
 <?php
 if ($_REQUEST && isset($_GET['eliminar_sesion'])) {
     unset($_SESSION['logged_in']);
     return Redirect::to('/');
     }
 ?> 
-@endsection
-@yield('header')
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const iconoMenu = document.getElementById('icono-menu');
+        const menuDesplegable = document.getElementById('menu-desplegable');
+
+        iconoMenu.addEventListener('click', function() {
+            // Si el menú está oculto, mostrarlo; si está visible, ocultarlo
+            if (menuDesplegable.style.left === '-250px') {
+                menuDesplegable.style.left = '0';
+            } else {
+                menuDesplegable.style.left = '-250px';
+            }
+        });
+    });
+</script>
