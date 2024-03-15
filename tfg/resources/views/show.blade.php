@@ -1,4 +1,4 @@
-@extends ('master')
+@include ('header')
 
 <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
 @section('show', 'info peliculas')

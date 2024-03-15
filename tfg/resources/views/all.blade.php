@@ -1,4 +1,4 @@
-@extends ('master')
+@include ('master')
 
 <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
     <div class="container">
