@@ -8,7 +8,7 @@
 <h1>{{ $libros->nombre }}</h1>
 
 
-    <img style="height: 400px" id="imagenesPeliculas" src="{{url('images/libros' .$libros->imagen)}}"alt="cartel pelicula">
+    <img style="height: 400px" id="imagenesPeliculas" src="{{url('images/libros/' .$libros->imagen)}}"alt="portada libro">
 
 
    
