@@ -15,6 +15,7 @@ if (!isset($_SESSION['logged_in'])) {
         <!-- Contenido del menú desplegable -->
         <p style="text-align:end;">Usuario:<?php print $_SESSION['nombre']?><br>
             <a class="config" href="{{"config"}}">Configuracion</a>
+            <a class="config" href="{{"read"}}">Libros Leidos</a>
             <form style="text-align:end;" method="get" action="">
             <input  type="submit" name="eliminar_sesion" value="Cerrar Sesión">
             </form> 

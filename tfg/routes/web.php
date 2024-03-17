@@ -13,11 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('master');
-});
-Route::get('config', function () {
-    return view('config');
-});
+Route::get('/', function () {return view('master');});
+Route::get('config', function () {return view('config');});
+Route::get('read', function () {return view('read');});
 Route::get('/all','LibrosController@index');
 Route::get('/show{id}', 'LibrosController@show')->name('show');
