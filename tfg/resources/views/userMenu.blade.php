@@ -1,9 +1,8 @@
-
 <?php
 if (!isset($_SESSION['logged_in'])) {
     ?>
-    <a class="login" href="{{ url('login.php') }}">Iniciar Sesion</a>
-    <a  class="register" href="{{ url('register.php') }}">Registrarse</a>
+    <a class="login" href="{{ url('login') }}">Iniciar Sesion</a>
+    <a  class="register" href="{{ url('registrar') }}">Registrarse</a>
 
    <?php
 }else{
@@ -14,7 +13,7 @@ if (!isset($_SESSION['logged_in'])) {
     <div id="dropdown-menu" style="display: none;">
         <!-- Contenido del menú desplegable -->
         <p style="text-align:end;">Usuario:<?php print $_SESSION['nombre']?><br>
-            <a class="config" href="{{"config"}}">Configuracion</a>
+            <a class="config" href="{{'config'}}">Configuracion</a><br>
             <a class="config" href="{{"read"}}">Libros Leidos</a>
             <form style="text-align:end;" method="get" action="">
             <input  type="submit" name="eliminar_sesion" value="Cerrar Sesión">

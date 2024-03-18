@@ -18,9 +18,9 @@ return new class extends Migration
             $table->string('paginas');
             $table->string('imagen');
             $table->text('synopsis'); 
-            $table->integer('genero_id');
-            $table->integer('escritor_id');
-            $table->integer('subgenero_id')->nullable();
+            $table->foreignId('genero_id')->constrained();
+            $table->foreignId('escritores_id')->constrained();
+            $table->integer('subgenero_id')->constrained()->nullable();
             $table->timestamps();
         });
     }

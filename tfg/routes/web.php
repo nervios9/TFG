@@ -14,7 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {return view('master');});
-Route::get('config', function () {return view('config');});
+
+Route::get('config{id}', 'UsuariosController@')->name('config');
 Route::get('read', function () {return view('read');});
 Route::get('/all','LibrosController@index');
 Route::get('/show{id}', 'LibrosController@show')->name('show');
+
+
+
+Route::get('/registrar', 'UsuariosController@crearUsuarioForm');
+Route::post('/registrar', 'UsuariosController@guardarUsuario');
+Route::get('/login', 'AuthController@showLoginForm')->name('login');
+Route::post('/login', 'AuthController@login');
