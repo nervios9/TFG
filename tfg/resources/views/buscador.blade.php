@@ -2,16 +2,8 @@
 
 <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
     <div class="container">
-        <h1>Catalogo de Libros</h1>
-    <form method="GET" action="{{ route('buscador') }}">
-            @csrf
-        <select name="opcion">
-            @foreach($listaGeneros as $genero)
-                <option value="{{ $genero->id }}">{{ $genero->genero }}</option>
-            @endforeach
-        </select>
-        <button type="submit">Buscar</button>
-    </form>
+        <h1>Buscador:</h1>
+        
         <table>
             @foreach($listaLibros ->chunk(5) as $fila)
                 <tr>

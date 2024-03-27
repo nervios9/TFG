@@ -13,8 +13,10 @@
 
    
 
+    
+   
 
-
+  
 <p>Fecha de estreno: {{ $libros->fecha_salida }}</p>
 <p>Paginas: {{ $libros->paginas}}</p>
 

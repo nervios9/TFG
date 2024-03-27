@@ -29,7 +29,9 @@
 <img src="{{ asset('images/menudesplegable.png') }}" alt="Icono de menú" id="icono-menu">
 <nav id="menu-desplegable">
 
-    <a  class="opctionsdesplegable" href="{{ url('/all') }}">Todos los libros</a>
+    <a  class="opctionsdesplegable" href="{{ url('/all') }}">Todos los libros</a><br>
+    <a  class="opctionsdesplegable" href="{{ url('/buscador') }}">Buscador</a>
+    
 </nav>
     
        

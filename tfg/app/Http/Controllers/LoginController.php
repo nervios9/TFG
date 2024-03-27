@@ -25,5 +25,10 @@ class LoginController extends Controller
     return back()->withErrors([
         'name' => 'Las credenciales proporcionadas no coinciden con nuestros registros.',
     ]);
+    
+}
+public function showLoginForm()
+{
+    return view('login');
 }
 }
