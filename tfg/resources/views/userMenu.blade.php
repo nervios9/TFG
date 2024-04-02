@@ -1,43 +1,21 @@
-<?php
-if (!isset($_SESSION['logged_in'])) {
-    ?>
-    <a class="login" href="{{ url('login') }}">Iniciar Sesion</a>
-    <a  class="register" href="{{ url('registrar') }}">Registrarse</a>
 
-   <?php
-}else{
-?>
-<div>
-    <img src="{{ asset('images/icono.png') }}" onclick="toggleMenu()" alt="icono" class="dropdown-imgIcono" tabindex="0">
-   
-    <div id="dropdown-menu" style="display: none;">
-        <!-- Contenido del menú desplegable -->
-        <p style="text-align:end;">Usuario:<?php print $_SESSION['nombre']?><br>
-            <a class="config" href="{{'config'}}">Configuracion</a><br>
-            <a class="config" href="{{"read"}}">Libros Leidos</a>
-            <form style="text-align:end;" method="get" action="">
-            <input  type="submit" name="eliminar_sesion" value="Cerrar Sesión">
-            </form> 
-        </p>
-    
-     
-    </div>
+
+
+
+
+<div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
+            @if (Route::has('login'))
+                <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
+                    @auth
+                        <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
+                    @else
+                        <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
+
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
+                        @endif
+                    @endauth
+                </div>
+            @endif
+
 </div>
-<?php
-}
-?>
-<script>
-    var showMenu = false;
-
-    function toggleMenu() {
-        var menu = document.getElementById('dropdown-menu');
-        showMenu = !showMenu;
-        menu.style.display = showMenu ? 'block' : 'none';
-    }
-
-    function handleMenuItemClick() {
-        var menu = document.getElementById('dropdown-menu');
-        showMenu = false;
-        menu.style.display = 'none';
-    }
-</script>
