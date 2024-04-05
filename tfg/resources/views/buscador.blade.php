@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
     <div class="container">
         <h1>Buscador:</h1>
-        
+        <a href="{{url('/all')}}">Hacer otra consulta</a>
         <table>
             @foreach($listaLibros ->chunk(5) as $fila)
                 <tr>
@@ -15,4 +15,6 @@
                 
             @endforeach
         </table>
+        <br><br>
+        <a href="{{url('/all')}}">Hacer otra consulta</a>
         </div>

@@ -30,7 +30,6 @@
 <nav id="menu-desplegable">
 
     <a  class="opctionsdesplegable" href="{{ url('/all') }}">Todos los libros</a><br>
-    <a  class="opctionsdesplegable" href="{{ url('/buscador') }}">Buscador</a>
     
 </nav>
     
