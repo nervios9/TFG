@@ -27,12 +27,12 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
+Route::get('/show{id}', 'LibrosController@show')->name('show');
 Route::get('config{id}', 'UsuariosController@')->name('config');
 Route::get('read', function () {return view('read');});
 Route::get('/all','LibrosController@index');
 Route::get('/buscador','LibrosController@find')->name('buscador');
-Route::get('/show{id}', 'LibrosController@show')->name('show');
+
 
 
 

@@ -13,9 +13,11 @@
 
    
 
-    
+       
+<p>Autor {{$libros ->escritor->nombre}}</p>
+<p>Autor {{$libros ->escritor->apellidos}}</p>
    
-
+<p>Genero {{$libros ->genero->genero}}</p>
   
 <p>Fecha de estreno: {{ $libros->fecha_salida }}</p>
 <p>Paginas: {{ $libros->paginas}}</p>

@@ -12,4 +12,8 @@ class Libro extends Model
     public function escritor() {
         return $this->belongsTo('App\Models\Escritor');
     }
+    
+    public function genero() {
+        return $this->belongsTo('App\Models\Genero');
+    }
 }
