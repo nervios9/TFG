@@ -21,7 +21,7 @@ class LibrosTableSeeder extends Seeder
             Pero los nobles a menudo han tenido trato sexual con jóvenes skaa y,  aunque la ley lo prohíbe, algunos de sus bastardos han sobrevivido y  heredado los poderes alománticos: son los «nacidos de la bruma» (mistborn).
             Ahora, Kelsier, el «superviviente», el único que ha logrado huir de los  Pozos de Hathsin, ha encontrado a Vin, una pobre chica skaa con mucha  suerte... Tal vez los dos, con el mejor equipo criminal jamás reunido,  unidos a la rebelión que los skaa intentan desde hace mil años, logren  cambiar el mundo y acabar con la atroz mano de hierro del Lord Legislador.',
             'genero_id' => '1',
-            'escritores_id' => '1',
+            'escritor_id' => '1',
            
         ]);
         DB::table('libros')->insert([
@@ -37,7 +37,7 @@ class LibrosTableSeeder extends Seeder
             
             En ese mundo de aventura épica, la estrategia política y religiosa debe  lidiar con los siempre misteriosos poderes de la alomancia...',
             'genero_id' => '1',
-            'escritores_id' => '1',
+            'escritor_id' => '1',
            
         ]);
         DB::table('libros')->insert([
@@ -51,7 +51,7 @@ class LibrosTableSeeder extends Seeder
             
             EnEl héroe de las eras se comprende el porqué de la niebla y las  cenizas, las tenebrosas acciones del Lord Legislador y la naturaleza del  Pozo de la Ascensión. Esta aventura lleva a la trilogía a un clímax dramático y sorprendente.',
             'genero_id' => '1',
-            'escritores_id' => '1',
+            'escritor_id' => '1',
            
         ]);
        
@@ -64,7 +64,7 @@ class LibrosTableSeeder extends Seeder
             Smaug parecía profundamente dormido cuando Bilbo espió una vez más desde la entrada. ¡Pero fingía estar dormido! 
             ¡Estaba vigilando la entrada del túnel!... Sacado de su cómodo agujero-hobbit por Gandalf y una banda de enanos, Bilbo se encuentra de pronto en medio de una conspiración que pretende apoderarse del tesoro de Smaug el Magnífico, un enorme y muy peligroso dragón...',
             'genero_id' => '1',
-            'escritores_id' => '2',
+            'escritor_id' => '2',
            
         ]);
         DB::table('libros')->insert([
@@ -74,7 +74,7 @@ class LibrosTableSeeder extends Seeder
             'imagen' => 'comunidadanillo.jpg',
             'synopsis' => 'En la adormecida e idílica Comarca, un joven hobbit recibe un encargo: custodiar el Anillo Único y emprender el viaje para su destrucción en la Grieta del Destino. Acompañado por magos, hombres, elfos y enanos, atravesará la Tierra Media y se internará en las sombras de Mordor, perseguido siempre por las huestes de Sauron, el Señor Oscuro, dispuesto a recuperar su creación para establecer el dominio definitivo del Mal.',
             'genero_id' => '1',
-            'escritores_id' => '2',
+            'escritor_id' => '2',
            
         ]);
         DB::table('libros')->insert([
@@ -85,7 +85,7 @@ class LibrosTableSeeder extends Seeder
             'synopsis' => 'La misión parece abocada al fracaso pero la aventura continua...
             La Compañía se ha disuelto y sus integrantes emprenden caminos separados. Frodo y Sam continúan solos su viaje a lo largo del río Anduin, perseguidos por la sombra misteriosa de un ser extraño que también ambiciona la posesión del Anillo. Mientras, hombres, elfos y enanos se preparan para la batalla final contra las fuerzas del Señor del Mal.',
             'genero_id' => '1',
-            'escritores_id' => '2',
+            'escritor_id' => '2',
            
         ]);
         DB::table('libros')->insert([
@@ -96,7 +96,7 @@ class LibrosTableSeeder extends Seeder
             'synopsis' => 'La última parte del viaje de Frodo y Sam
             Los ejércitos del Señor Oscuro van extendiendo cada vez más su maléfica sombra por la Tierra Media. Hombres, elfos y enanos unen sus fuerzas para presentar batalla a Sauron y sus huestes. Ajenos a estos preparativos, Frodo y Sam siguen adentrándose en el país de Mordor en su heroico viaje para destruir el Anillo de Poder en las Grietas del Destino.',
             'genero_id' => '1',
-            'escritores_id' => '2',
+            'escritor_id' => '2',
 
            
         ]);
@@ -113,7 +113,7 @@ class LibrosTableSeeder extends Seeder
              
             Sin embargo, ahora su poder se ve amenazado: en el norte, el Muro erigido para proteger el reino de las bestias y de los extraños se tambalea',
             'genero_id' => '1',
-            'escritores_id' => '3',
+            'escritor_id' => '3',
            
         ]);
         DB::table('libros')->insert([
@@ -132,7 +132,7 @@ class LibrosTableSeeder extends Seeder
             
             Y mientras la batalla continúa, al norte, más allá del Muro, las fuerzas oscuras se vuelven cada vez más poderosas.',
             'genero_id' => '1',
-            'escritores_id' => '3',
+            'escritor_id' => '3',
            
         ]);
         DB::table('libros')->insert([
@@ -147,7 +147,7 @@ class LibrosTableSeeder extends Seeder
              
             Desde el lejano norte, una horda de bárbaros y gigantes se cierne lentamente sobre los Siete Reinos. Sin embargo, junto al pueblo l',
             'genero_id' => '1',
-            'escritores_id' => '3',
+            'escritor_id' => '3',
 
            
         ]);
@@ -165,7 +165,7 @@ class LibrosTableSeeder extends Seeder
              
             La casa Lannister y sus aliados parecen haber salido victoriosos. Sin embargo, algo se remueve en las entrañas de los Siete Reinos y, mientras cuervos en forma',
             'genero_id' => '1',
-            'escritores_id' => '3',
+            'escritor_id' => '3',
            
         ]);
         DB::table('libros')->insert([
@@ -180,7 +180,7 @@ class LibrosTableSeeder extends Seeder
              
             En el Muro, Jon Nieve se ve obligado a consolidar por la espada su rango como lord comandante de la Guardia de la Noche. Mientras, al otro lado del mar Angosto, Daenerys Targaryen,',
             'genero_id' => '1',
-            'escritores_id' => '3',
+            'escritor_id' => '3',
 
            
         ]);
@@ -195,7 +195,7 @@ class LibrosTableSeeder extends Seeder
              Nimona es una joven deslenguada y bravucona, con la habilidad de cambiar de forma a voluntad. Sin pensárselo dos veces, la chica decide convertirse en ayudante del 
              Señor Ballister Blackheart, un villano con un oscurísimo pasado. Ambos personajes vivirán una aventura que sorprenderá a los lectores por sus inesperados giros argumentales.',
             'genero_id' => '1',
-            'escritores_id' => '4',
+            'escritor_id' => '4',
 
            
         ]);
@@ -210,7 +210,7 @@ class LibrosTableSeeder extends Seeder
             Tamlin, quien a pesar de su aparente frialdad la hará descubrir una ardiente pasión que marcará su destino.
             Lejos de su familia y su mundo, Feyre tendrá que tomar una decisión capital para salvar todo lo que ama.',
             'genero_id' => '1',
-            'escritores_id' => '5',
+            'escritor_id' => '5',
             'subgenero_id'=>'2',
            
         ]);
@@ -229,7 +229,7 @@ class LibrosTableSeeder extends Seeder
             
             Venganza.',
             'genero_id' => '1',
-            'escritores_id' => '6',
+            'escritor_id' => '6',
     
            
         ]);
@@ -247,7 +247,7 @@ class LibrosTableSeeder extends Seeder
             roto en su interior que de alguna manera encaja con lo que hay roto en mí. Acercarme a él puede significar
             el fin del mundo, pero empiezo a sospechar que alguien me ha traído a este lugar a propósito, y tengo que descubrir por qué.»',
             'genero_id' => '1',
-            'escritores_id' => '7',
+            'escritor_id' => '7',
             'subgenero_id'=>'2',
            
         ]);
@@ -265,7 +265,7 @@ class LibrosTableSeeder extends Seeder
             mi muerte segura. Tengo que luchar, no solo por mi vida, sino por la de todos. Solo sé que salvar a las personas que amo
             requerirá sacrificio. Quizás más de lo que puedo dar.»',
             'genero_id' => '1',
-            'escritores_id' => '7',
+            'escritor_id' => '7',
             'subgenero_id'=>'2',
            
         ]);
@@ -283,7 +283,7 @@ class LibrosTableSeeder extends Seeder
             vida con una maldición mortal e inquebrantable.
             Habrá que tomar decisiones... y me temo que no todos sobrevivirán.»',
             'genero_id' => '1',
-            'escritores_id' => '7',
+            'escritor_id' => '7',
             'subgenero_id'=>'2',
            
         ]);
@@ -300,7 +300,7 @@ class LibrosTableSeeder extends Seeder
             No hay garantía de que nadie se quede en pie cuando el polvo se asiente, pero si queremos salvar este mundo, no tengo otra opción. Tendré que 
             abrazar cada parte de mí... incluso las partes que más temo.',
             'genero_id' => '1',
-            'escritores_id' => '7',
+            'escritor_id' => '7',
             'subgenero_id'=>'2',
            
         ]);
@@ -317,7 +317,7 @@ class LibrosTableSeeder extends Seeder
             Porque hay algo que nos conecta, algo más fuerte que el miedo… Y mucho más peligroso.
             Ya forma parte de ti.',
             'genero_id' => '1',
-            'escritores_id' => '7',
+            'escritor_id' => '7',
             'subgenero_id'=>'2',
            
         ]);
@@ -332,7 +332,7 @@ class LibrosTableSeeder extends Seeder
              ella para salvar a Mekhi, pero esta vez me llevaré a mis poderosos amigos conmigo, y también a Hudson, aunque siento que le pasa algo raro; nos está ocultando un secreto, incluso a mí.
             Lo único que sé es que nuestras vidas corren peligro, y todo es culpa mía porque aún le debo un favor a la Anciana… y claramente ha venido a buscarlo.',
             'genero_id' => '1',
-            'escritores_id' => '7',
+            'escritor_id' => '7',
             'subgenero_id'=>'2',
            
         ]);
@@ -344,7 +344,7 @@ class LibrosTableSeeder extends Seeder
             'synopsis' => 'Feyre está destrozada. Y aunque tiene a Tamlin por fin a su lado sano y a salvo, no sabe cómo podrá dejar atrás los recuerdos que la acechan... ni cómo mantendrá en secreto el oscuro pacto que hizo con Rhysand, que la mantiene intensamente unida a él y la confunde.
             Feyre ya no puede seguir siendo la de antes. Ahora es fuerte y debe romper con todo lo que la ata. Su corazón necesita libertad.',
             'genero_id' => '1',
-            'escritores_id' => '5',
+            'escritor_id' => '5',
             'subgenero_id'=>'2',
            
         ]);
@@ -355,7 +355,7 @@ class LibrosTableSeeder extends Seeder
             'imagen' => 'cortealas.jpg',
             'synopsis' => 'Feyre ha vuelto a la Corte Primavera decidida a desvelar las artimañas de Tamlin y las razones del rey que amenaza Prythian. Pero para hacerlo, tendrá que jugar al mortal juego del engaño…un solo paso en falso podría condenarla, no solo a ella sino a todo su mundo. La guerra se cierne sobre todos, y Feyre tendrá que elegir muy bien en quién confiar.',
             'genero_id' => '1',
-            'escritores_id' => '5',
+            'escritor_id' => '5',
             'subgenero_id'=>'2',
            
         ]);
@@ -366,7 +366,7 @@ class LibrosTableSeeder extends Seeder
             'imagen' => 'cortehielo.jpg',
             'synopsis' => 'Feyre, Rhys y su círculo más íntimo se encuentran reconstruyendo la Corte de la Noche y su mundo. Pero el Solsticio de Invierno finalmente llega... y con toda su fuerza. Aún su atmosfera festiva no puede contrarrestar que las sombras del pasado acechen en el presente. Feyre se da cuenta que los que más quiere guardan heridas del pasado de las que no era consciente. Cicatrices que tendrán un gran impacto en el futuro de su Corte.',
             'genero_id' => '1',
-            'escritores_id' => '5',
+            'escritor_id' => '5',
             'subgenero_id'=>'2',
            
         ]);
@@ -379,7 +379,7 @@ class LibrosTableSeeder extends Seeder
             Mientras que Cassian, miembro de la Corte Noche de Rhysand y Feyre, es designado para entrenar a la incontrolable Nesta y entre ellos se enciende el más ardiente de los fuegos, las traidoras reinas humanas forjan una nueva y peligrosa alianza que amenaza la frágil paz establecida entre los reinos. Y la clave para detenerlas podría depender de que Cassian y Nesta logren superar sus inquietantes pasados. 
             En un mundo arrasado por la guerra, Nesta y Cassian deberán enfrentarse tanto a sus monstruos interiores como a los que acechan en el exterior, y buscarán la aceptación–y la curación–en brazos del otro.',
             'genero_id' => '1',
-            'escritores_id' => '5',
+            'escritor_id' => '5',
             'subgenero_id'=>'2',
            
         ]);
@@ -394,7 +394,7 @@ class LibrosTableSeeder extends Seeder
             En 2008, Marcus Goldman, un joven escritor, visita a su mentor -Harry Quebert, autor de una aclamada novela- y descubre que este tuvo una relación secreta con Nola Kellergan. Poco despues, Harry es arrestado y acusado de asesinato al encontrarse el cadáver de Nola enterrado en su jardín.
             Marcus comienza a investigar y a escribir un libro sobre el caso. Mientras busca demostrar la inocencia de Harry, una trama de secretos sale a la luz. La verdad solo llega al final de un largo, intrincado y apasionante recorrido.',
             'genero_id' => '6',
-            'escritores_id' => '8',
+            'escritor_id' => '8',
            
         ]); 
         DB::table('libros')->insert([
@@ -405,7 +405,7 @@ class LibrosTableSeeder extends Seeder
             'synopsis' => 'Carnissa Gardner, la última Bruja Negra, rechazó a las fuerzas enemigas y salvó a su pueblo durante la Guerra del Reino. Fue una de las más grandes magas Gardnerianas. Elloren Gardner, de 17 años, es la viva imagen de su famosa abuela, ahora ya muerta, aunque no tiene poderes mágicos, y eso no es bueno en una sociedad que premia las habilidades mágicas por encima de las demás.
             Despues de la muerte de sus padres, Elloren y sus hermanos son criados por su tío en una aldea en el bosque. Elloren quiere ir a la Universidad Verpax para convertirse en boticaria, pero su intrigante tía política quiere que se case con Lukas Gray, un poderoso mago y aliado político de su tía. Elloren rechaza la propuesta de Lukas, y descubre que la influencia de su tía se extiende y hace que su vida en la universidad pueda estar llena de peligros.',
             'genero_id' => '1',
-            'escritores_id' => '9',
+            'escritor_id' => '9',
             'subgenero_id'=>'2',
            
         ]);
@@ -418,7 +418,7 @@ class LibrosTableSeeder extends Seeder
 
             Atrapada entre sus sentimientos crecientes por el rebelde Yvan Guriel y el poder seductor de Lukas, Elloren deberá encontrar una manera de mantenerse fiel al bien común para proteger a todos los que ama... incluso si eso significa protegerse de sí misma.',
             'genero_id' => '1',
-            'escritores_id' => '9',
+            'escritor_id' => '9',
             'subgenero_id'=>'2',
            
         ]);
@@ -433,7 +433,7 @@ class LibrosTableSeeder extends Seeder
             
             Con solo unas pocas semanas para entrenarse y convertirse en guerrera, y sin control sobre su propia magia, Elloren encontrará aliados inesperados entre aquellos que aparentemente están destinados a matarla. Ha llegado el momento de dar un paso al frente, de defenderse y de seguir adelante antes de que la destrucción sea todavía mayor.',
             'genero_id' => '1',
-            'escritores_id' => '9',
+            'escritor_id' => '9',
             'subgenero_id'=>'2',
            
         ]);
@@ -448,7 +448,7 @@ class LibrosTableSeeder extends Seeder
             
             La Bruja Negra ha vuelto y la profecía ha llegado. Es hora de luchar. Pero Vogel todavía tiene una revelación crucial para todos.',
             'genero_id' => '1',
-            'escritores_id' => '9',
+            'escritor_id' => '9',
             'subgenero_id'=>'2',
            
         ]);

@@ -16,4 +16,7 @@ class Libro extends Model
     public function genero() {
         return $this->belongsTo('App\Models\Genero');
     }
+
+  
+
 }

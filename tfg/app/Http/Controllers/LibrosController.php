@@ -28,9 +28,8 @@ class LibrosController extends Controller
 
     public function show($id)
     {
-        $libros = Libro::findOrFail($id);
-        $libros->load('escritor');
-    
-        return view('show', compact('libros'));
+        $libro = Libro::findOrFail($id);
+     
+        return view('show', compact('libro'));
     }
 }

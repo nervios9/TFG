@@ -12,7 +12,4 @@ class Escritor extends Model
     public function libros() {
         return $this->hasMany('App\Models\Libro');
     }
-
-
-
 }

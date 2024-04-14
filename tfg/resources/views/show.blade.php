@@ -5,24 +5,23 @@
 @section( 'content')
 <div class="container">
    
-<h1>{{ $libros->nombre }}</h1>
+<h1>{{ $libro->nombre }}</h1>
 
 
-    <img style="height: 400px" id="imagenesPeliculas" src="{{url('images/libros/' .$libros->imagen)}}"alt="portada libro">
+    <img style="height: 400px" id="imagenesPeliculas" src="{{url('images/libros/' .$libro->imagen)}}"alt="portada libro">
 
 
    
 
        
-<p>Autor {{$libros ->escritor->nombre}}</p>
-<p>Autor {{$libros ->escritor->apellidos}}</p>
+    <p>Autor {{ $libro->escritor->nombre }}</p>
    
-<p>Genero {{$libros ->genero->genero}}</p>
+<p>Genero {{$libro ->genero->genero}}</p>
   
-<p>Fecha de estreno: {{ $libros->fecha_salida }}</p>
-<p>Paginas: {{ $libros->paginas}}</p>
+<p>Fecha de estreno: {{ $libro->fecha_salida }}</p>
+<p>Paginas: {{ $libro->paginas}}</p>
 
-<p>Synopsis: {{ $libros->synopsis}}</p>
+<p>Synopsis: {{ $libro->synopsis}}</p>
 
 
 </div>
