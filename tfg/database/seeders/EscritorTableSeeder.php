@@ -12,47 +12,47 @@ class EscritorTableSeeder extends Seeder
      */
         public function run(): void
     {
-        DB::table('escritor')->insert([
+        DB::table('escritors')->insert([
             'nombre' => 'Brandon',
             'apellidos' => 'Sanderson',
         ]);
-        DB::table('escritor')->insert([
+        DB::table('escritors')->insert([
             'nombre' => 'J.R.R',
             'apellidos' => 'Tolkien',
         ]);
-        DB::table('escritor')->insert([
+        DB::table('escritors')->insert([
             'nombre' => 'George',
             'apellidos' => 'R.R Martin',
         ]);
-        DB::table('escritor')->insert([
+        DB::table('escritors')->insert([
             'nombre' => 'Noelle',
             'apellidos' => 'Stevenson',
         ]);
-        DB::table('escritor')->insert([
+        DB::table('escritors')->insert([
             'nombre' => 'SARAH',
             'apellidos' => 'J.MAAS',
         ]);
-        DB::table('escritor')->insert([
+        DB::table('escritors')->insert([
             'nombre' => 'Jay',
             'apellidos' => 'Kristoff',
         ]);
-        DB::table('escritor')->insert([
+        DB::table('escritors')->insert([
             'nombre' => 'Tracy',
             'apellidos' => 'Wolff',
         ]);
-        DB::table('escritor')->insert([
+        DB::table('escritors')->insert([
             'nombre' => 'Joel ',
             'apellidos' => 'Dicker',
         ]);
-        DB::table('escritor')->insert([
+        DB::table('escritors')->insert([
             'nombre' => 'Laurie',
             'apellidos' => 'Forest',
         ]);
-        DB::table('escritor')->insert([
+        DB::table('escritors')->insert([
             'nombre' => '',
             'apellidos' => '',
         ]);
-        DB::table('escritor')->insert([
+        DB::table('escritors')->insert([
             'nombre' => '',
             'apellidos' => '',
         ]);

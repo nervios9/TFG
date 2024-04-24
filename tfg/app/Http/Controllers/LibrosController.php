@@ -32,4 +32,12 @@ class LibrosController extends Controller
      
         return view('show', compact('libro'));
     }
+
+    public function carrousel()
+    {
+        $libros = Libro::all();
+        $listaGeneros = Genero::all();
+        return view('carrousel', ['libros' => $libros,'listaGeneros' => $listaGeneros]);
+    }
+  
 }

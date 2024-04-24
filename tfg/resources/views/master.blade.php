@@ -16,6 +16,7 @@
   
 </head>
 
+<script src="/bootstrap-4.0.0-dist/js/bootstrap.js"></script>
 
 <body>
  
@@ -30,10 +31,15 @@
        <?php
     }else{
         ?>
-       
-    <script src="/bootstrap-4.0.0-dist/js/bootstrap.js"></script>
+               
+             
     <?php
     }
+    @include('carrousel') 
 ?>
-    
+   <?php
+    @include('carrousel')
+   ?>
+     
+
 </body>   

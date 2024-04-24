@@ -1,6 +1,14 @@
+<link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
+<link rel="stylesheet" href="{{ asset('bootstrap-4.0.0-dist/css/bootstrap.css') }}">
+<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" >
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" ></script>
+<script src="{{ asset('js/app.js') }}" defer></script>
+ <a href=""> asfasfa</a>
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+          
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
