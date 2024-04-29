@@ -29,9 +29,28 @@ class GenerosTableSeeder extends Seeder
         ]);
         DB::table('generos')->insert([
             'genero' => 'novela negra',
+     
         ]);DB::table('generos')->insert([
-            'genero' => '',
+            'genero' => 'Novela',
         ]);
-        
+ DB::table('generos')->insert([
+            'genero' => 'Misterio',
+        ]);
+DB::table('generos')->insert([
+            'genero' => 'Juvenil',
+        ]);
+DB::table('generos')->insert([
+            'genero' => 'Comedia',
+        ]);
+DB::table('generos')->insert([
+            'genero' => 'Comic',
+        ]);
+DB::table('generos')->insert([
+            'genero' => 'Policiaca',
+        ]);
+
+DB::table('generos')->insert([
+            'genero' => 'Ficcion',
+        ]);
     }
 }
