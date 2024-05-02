@@ -43,6 +43,19 @@
     <button type="submit">Enviar</button>
 </form>
 
+
+<h2>Comentarios:</h2>
+<ul>
+    @foreach ($comentarios as $comentario)
+        <li>
+           
+         {{--  {{ $comentario->users->name }} --}}
+            {{ $comentario->comentario }} - 
+        </li>
+    @endforeach
+</ul>
+
+
 </div>
 @endsection
 @yield('content')

@@ -19,5 +19,6 @@ class ComentariosController extends Controller
         $nuevoComentario->save();
 
         return "Comentario registrado correctamente";
+        
     }
 }

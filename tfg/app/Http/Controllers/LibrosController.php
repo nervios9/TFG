@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Libro;
 use App\Models\Genero;
+use App\Models\Comentarios;
 use Illuminate\Support\Facades\DB;
 class LibrosController extends Controller
 {
     public function index()
     {
+       
         $listaLibros = Libro::all();
         $listaGeneros = Genero::all();
         return view('all', ['listaLibros' => $listaLibros,'listaGeneros' => $listaGeneros]);
@@ -28,9 +30,13 @@ class LibrosController extends Controller
 
     public function show($id)
     {
+        // Obtener el libro específico
         $libro = Libro::findOrFail($id);
-     
-        return view('show', compact('libro'));
+    
+        // Obtener todos los comentarios asociados con el libro
+        $comentarios = Comentarios::where('libro_id', $id)->get();
+    
+        return view('show', compact('libro', 'comentarios'));
     }
 
     public function carrousel()
@@ -39,5 +45,6 @@ class LibrosController extends Controller
         $listaGeneros = Genero::all();
         return view('carrousel', ['libros' => $libros,'listaGeneros' => $listaGeneros]);
     }
+   
   
 }
