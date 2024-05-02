@@ -36,7 +36,7 @@ Route::get('/buscador','LibrosController@find')->name('buscador');
 
 
 
-
+Route::post('/enviarDatos', 'ComentariosController@recibirDatos')->name('enviarDatos');
 Route::get('/registrar', 'UsuariosController@crearUsuarioForm');
 Route::post('/registrar', 'UsuariosController@guardarUsuario');
 Route::get('/login', 'AuthController@showLoginForm')->name('login');

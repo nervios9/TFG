@@ -24,6 +24,25 @@
 <p>Synopsis: {{ $libro->synopsis}}</p>
 
 
+<form action="{{ route('enviarDatos') }}" method="POST">
+    @csrf
+    <div class="input-row">
+        <input type="hidden" name="comment_id" id="post" placeholder="Nombre" />
+        <label for="nombre" class="form-label">Usuario:</label> 
+        <input class="form-control" type="text" name="nombre" id="nombre" readonly value= {{ Auth::user()->name }} required/>
+    </div>
+    <div class="input-row">
+        <label for="comme" class="form-label">Comentario:</label>
+            <p class="emoji-picker-container">
+              <textarea rows="6" class="form-control" 
+              type="text" name="comentario" id="comentario" placeholder="Agregue su comentario" required></textarea>
+            </p>
+        </div>
+        <input type="hidden" name="usuario" value={{ Auth::user()->id }}>
+        <input type="hidden" name="libro_id" value={{$libro->id}}>
+    <button type="submit">Enviar</button>
+</form>
+
 </div>
 @endsection
 @yield('content')
