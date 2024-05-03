@@ -23,6 +23,15 @@
 
 <p>Synopsis: {{ $libro->synopsis}}</p>
 
+<form method="POST" action="{{ route('librosLeidos') }}">
+    @csrf
+    @method('POST')
+    <input type="checkbox" name="leido">
+    <label for="completed">Libro Leido</label>
+    <input type="hidden" name="usuario" value={{ Auth::user()->id }}>
+    <input type="hidden" name="libro_id" value={{$libro->id}}>
+    <button type="submit">Guardar</button>
+</form>
 
 <form action="{{ route('enviarDatos') }}" method="POST">
     @csrf
