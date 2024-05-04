@@ -11,7 +11,7 @@ class LibrosLeidosController extends Controller
         $nuevoLibroLeido ->libro_id = $request->input('libro_id');
         $nuevoLibroLeido ->usuario_id = $request->input('usuario');
         $nuevoLibroLeido ->save();
-        return "Libro registrado correctamente <br> <a href='all'>Volver</a>";
+        return redirect()->back()->with('perfecto', 'Libro leido agregado');
     }
     public function leidos($id)
     {

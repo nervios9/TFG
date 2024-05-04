@@ -25,11 +25,15 @@
 
 <form method="POST" action="{{ route('librosLeidos') }}">
     @csrf
-    <input type="checkbox" name="leido">
-    <label for="completed">Libro Leido</label>
-    <input type="hidden" name="usuario" value={{ Auth::user()->id }}>
-    <input type="hidden" name="libro_id" value={{$libro->id}}>
-    <button type="submit">Guardar</button>
+    <input type="checkbox" name="leido" {{ $libro->librosLeidos(Auth::user()) ? 'checked disabled' : '' }}>
+    @if ($libro->librosLeidos(Auth::user()))
+        <span>Libro Leído</span>
+    @else
+        <label for="completed">Marcar como leído</label>
+    @endif
+    <input type="hidden" name="usuario" value="{{ Auth::user()->id }}">
+    <input type="hidden" name="libro_id" value="{{ $libro->id }}">
+    <button type="submit" {{ $libro->LibrosLeidos(Auth::user()) ? 'disabled' : '' }}>Guardar</button>
 </form>
 
 <form action="{{ route('enviarDatos') }}" method="POST">

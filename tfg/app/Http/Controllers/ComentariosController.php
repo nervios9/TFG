@@ -17,8 +17,8 @@ class ComentariosController extends Controller
         $nuevoComentario->usuario_id = $request->input('usuario');
         $nuevoComentario->libro_id = $request->input('libro_id');
         $nuevoComentario->save();
-
-        return "Comentario registrado correctamente <br> <a href='all'>Volver</a>";
+        return redirect()->back()->with('perfecto', 'Comentario agregado');
+       
      ;
         
     }
