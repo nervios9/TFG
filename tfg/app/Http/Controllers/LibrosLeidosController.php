@@ -11,14 +11,12 @@ class LibrosLeidosController extends Controller
         $nuevoLibroLeido ->libro_id = $request->input('libro_id');
         $nuevoLibroLeido ->usuario_id = $request->input('usuario');
         $nuevoLibroLeido ->save();
-
-        return "Libro registrado correctamente";
-
+        return "Libro registrado correctamente <br> <a href='all'>Volver</a>";
     }
     public function leidos($id)
     {
        
-        $listaLibros = LibrosLeidos::all();
-        return view('all', ['listaLibros' => $listaLibros,'listaGeneros' => $listaGeneros]);
+        $listaLibrosLeidos = LibrosLeidos::all();
+        return view('/dashboard', ['listaLibrosLeidos' => $listaLibrosLeidos]);
     }
 }

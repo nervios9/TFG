@@ -35,7 +35,7 @@ Route::get('/all','LibrosController@index');
 Route::get('/buscador','LibrosController@find')->name('buscador');
 
 
-Route::post('/librosLeidos', 'LibrosLeidosController@librosLeidos')->name('librosLeidos');
+Route::get('/librosLeidos', 'LibrosLeidosController@librosLeidos')->name('librosLeidos');
 Route::post('/enviarDatos', 'ComentariosController@recibirDatos')->name('enviarDatos');
 Route::get('/registrar', 'UsuariosController@crearUsuarioForm');
 Route::post('/registrar', 'UsuariosController@guardarUsuario');

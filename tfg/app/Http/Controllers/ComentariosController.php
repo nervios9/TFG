@@ -18,7 +18,8 @@ class ComentariosController extends Controller
         $nuevoComentario->libro_id = $request->input('libro_id');
         $nuevoComentario->save();
 
-        return "Comentario registrado correctamente";
+        return "Comentario registrado correctamente <br> <a href='all'>Volver</a>";
+     ;
         
     }
 }

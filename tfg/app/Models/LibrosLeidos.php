@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class LibrosLeidos extends Model
 {
     use HasFactory;
+
+
+    public function libros() {
+        return $this->belongsTo('App\Models\Libros');
+    }
 }

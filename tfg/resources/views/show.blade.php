@@ -25,7 +25,6 @@
 
 <form method="POST" action="{{ route('librosLeidos') }}">
     @csrf
-    @method('POST')
     <input type="checkbox" name="leido">
     <label for="completed">Libro Leido</label>
     <input type="hidden" name="usuario" value={{ Auth::user()->id }}>

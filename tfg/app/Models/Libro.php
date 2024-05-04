@@ -19,6 +19,9 @@ class Libro extends Model
     public function comentarios() {
         return $this->belongsTo('App\Models\Comentarios');
     }
+    public function librosLeidos() {
+        return $this->belongsTo('App\Models\LibrosLeidos');
+    }
 
   
 
