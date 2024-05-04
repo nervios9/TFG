@@ -16,7 +16,11 @@ class LibrosLeidosController extends Controller
     public function leidos($id)
     {
        
-        $listaLibrosLeidos = LibrosLeidos::all();
-        return view('/dashboard', ['listaLibrosLeidos' => $listaLibrosLeidos]);
-    }
+        $listaLibrosLeidos = LibrosLeidos::all(); // Replace this with your actual query to retrieve the data
+
+        return view('dashboard', ['listaLibrosLeidos' => $listaLibrosLeidos]);
 }
+
+}
+
+

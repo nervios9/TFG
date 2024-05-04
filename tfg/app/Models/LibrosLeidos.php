@@ -13,4 +13,7 @@ class LibrosLeidos extends Model
     public function libros() {
         return $this->belongsTo('App\Models\Libros');
     }
+    public function usuario() {
+        return $this->belongsTo('App\Models\Usuario');
+    }
 }

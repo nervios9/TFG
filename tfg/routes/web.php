@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\LibrosLeidosController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,8 +34,9 @@ Route::get('read', function () {return view('read');});
 Route::get('/all','LibrosController@index');
 Route::get('/buscador','LibrosController@find')->name('buscador');
 
+Route::get('showLibros/{id}', [LibrosLeidosController::class, 'leidos'])->name('libros.show');
 
-Route::get('/librosLeidos', 'LibrosLeidosController@librosLeidos')->name('librosLeidos');
+Route::post('/librosLeidos', 'LibrosLeidosController@librosLeidos')->name('librosLeidos');
 Route::post('/enviarDatos', 'ComentariosController@recibirDatos')->name('enviarDatos');
 Route::get('/registrar', 'UsuariosController@crearUsuarioForm');
 Route::post('/registrar', 'UsuariosController@guardarUsuario');
