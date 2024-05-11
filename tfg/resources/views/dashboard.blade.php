@@ -28,17 +28,18 @@
                     @endrole
                    
 
-                   </div>
-                    {{ __("Libros leidos:") }}
-                    {{-- @foreach($listaLibrosLeidos ->chunk(5) as $fila)
-                    <tr>
-                        @foreach($fila as $librosLeidos)
-                            <td class="imagenesLibros"><a href="{{route('show',[$librosLeidos->libro_id])}}"><img style="height: 300px"  src="{{url('images/libros/' .$librosLeidos->libros->imagen)}}"alt="Portada Libro"></a></td>
-                            
-                        @endforeach
-                    </tr>
-                                    
-                    @endforeach --}}
+               ç
+                {{ __("Libros leidos:") }}
+              @foreach($listaLibrosLeidos ->chunk(5) as $fila)
+                <tr>
+                    @foreach($fila as $librosLeidos)
+                        <td class="imagenesLibros"><a href="{{route('show',[$librosLeidos->libro_id])}}"><img style="height: 300px"  src="{{url('images/libros/' .$librosLeidos->libros->imagen)}}"alt="Portada Libro"></a></td>
+                        
+                    @endforeach
+                </tr>
+                                
+                @endforeach 
+
 
                    
                     

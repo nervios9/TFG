@@ -17,24 +17,23 @@
 <p>Autor: {{ $libro->escritor->nombre }} {{ $libro->escritor->apellidos }}</p>
    
 <p>Genero: {{$libro ->genero->genero}}</p>
-  
+
 <p>Fecha de estreno: {{ $libro->fecha_salida }}</p>
 <p>Paginas: {{ $libro->paginas}}</p>
 
 <p>Synopsis: {{ $libro->synopsis}}</p>
 
-<form method="POST" action="{{ route('librosLeidos') }}">
-    @csrf
-    <input type="checkbox" name="leido" {{ $libro->librosLeidos(Auth::user()) ? 'checked disabled' : '' }}>
-    @if ($libro->librosLeidos(Auth::user()))
-        <span>Libro Leído</span>
-    @else
-        <label for="completed">Marcar como leído</label>
-    @endif
-    <input type="hidden" name="usuario" value="{{ Auth::user()->id }}">
-    <input type="hidden" name="libro_id" value="{{ $libro->id }}">
-    <button type="submit" {{ $libro->LibrosLeidos(Auth::user()) ? 'disabled' : '' }}>Guardar</button>
-</form>
+
+    <form method="POST" action="{{ route('librosLeidos') }}">
+        @csrf
+        <input type="hidden" name="usuario" value="{{ Auth::user()->id }}">
+        <input type="hidden" name="libro_id" value="{{ $libro->id }}">
+        <input type="checkbox" name="leido">
+        Libro Leído
+        <button type="submit">Guardar</button>
+       
+    </form>
+
 
 <form action="{{ route('enviarDatos') }}" method="POST">
     @csrf

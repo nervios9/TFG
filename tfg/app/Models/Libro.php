@@ -20,7 +20,7 @@ class Libro extends Model
         return $this->belongsTo('App\Models\Comentarios');
     }
     public function librosLeidos() {
-        return $this->belongsTo('App\Models\LibrosLeidos');
+        return $this->hasOne('App\Models\LibrosLeidos');
     }
 
   

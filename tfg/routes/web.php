@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LibrosController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LibrosLeidosController;
@@ -19,9 +20,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboar{usuario}', [LibrosLeidosController::class, 'leidos'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -33,9 +32,8 @@ Route::get('config{id}', 'UsuariosController@')->name('config');
 Route::get('read', function () {return view('read');});
 Route::get('/all','LibrosController@index');
 Route::get('/buscador','LibrosController@find')->name('buscador');
-
-Route::get('showLibros/{id}', [LibrosLeidosController::class, 'leidos'])->name('libros.show');
-
+Route::get('/recomendador', function () {return view('recomendador');});
+Route::get('/mostrarLeidos{id}', 'LibrosLeidosController@leidos')->name('mostrarLeidos');
 Route::post('/librosLeidos', 'LibrosLeidosController@librosLeidos')->name('librosLeidos');
 Route::post('/enviarDatos', 'ComentariosController@recibirDatos')->name('enviarDatos');
 Route::get('/registrar', 'UsuariosController@crearUsuarioForm');

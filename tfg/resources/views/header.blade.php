@@ -30,7 +30,8 @@
 <nav id="menu-desplegable">
 
     <a  class="opctionsdesplegable" href="{{ url('/all') }}">Todos los libros</a><br>
-    
+    <a  class="opctionsdesplegable" href="{{ url('/recomendador') }}">Recomendador de libros</a><br>
+   {{-- <a class="opctionsdesplegable" href="{{ url('/mostrarLeidos', [Auth::user()->id]) }}">Libros Leidos</a><br>--}}
 </nav>
     
        
