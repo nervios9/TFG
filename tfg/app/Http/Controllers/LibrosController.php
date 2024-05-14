@@ -16,6 +16,13 @@ class LibrosController extends Controller
         $listaGeneros = Genero::all();
         return view('all', ['listaLibros' => $listaLibros,'listaGeneros' => $listaGeneros]);
     }
+    public function recomendador()
+    {
+       
+        $listaLibros = Libro::all();
+        $listaGeneros = Genero::all();
+        return view('recomendador', ['listaLibros' => $listaLibros,'listaGeneros' => $listaGeneros]);
+    }
     public function find(Request $request)
     {
         
@@ -25,6 +32,20 @@ class LibrosController extends Controller
       
         
         return view('buscador', ['listaLibros' => $listaLibros,]);
+    }
+
+
+
+    public function recomend(Request $request)
+    {
+        
+        $respuesta = $request->input('opcion');
+        $libroAleatorio = DB::table('libros')
+        ->where('genero_id', $respuesta)
+        ->orWhere('subgenero_id', $respuesta)
+        ->inRandomOrder()  // Ordenar de manera aleatoria
+        ->first();
+        return view('recomend', ['libro' => $libroAleatorio,]);
     }
     
 

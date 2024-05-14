@@ -44,7 +44,7 @@ class LibrosTableSeeder extends Seeder
             'nombre' => 'El heroe de las eras',
             'fecha_salida' => '2008-10-14',
             'paginas' => '760',
-            'imagen' => 'heroeras.jpg',
+            'imagen' => 'heroeras.jfif',
             'synopsis' => 'Durante mil años nada ha cambiado: han caído las cenizas, los skaa han  sido esclavizados y el Lord Legislador ha dominado el mundo. Kelsier, el  «superviviente», el único que ha logrado huir de los Pozos de Hathsin,  junto a Vin, una pobre chica skaa, se une a la rebelión. Y por fin lo  imposible sucede: por fin la revolución ha triunfado. Pero acabar con el  Lord Legislador es la parte sencilla. El verdadero desafío consistirá en  sobrevivir a las consecuencias de su caída... sin Kelsier.
 
             Vin y el Rey Elend buscan en los últimos escondites de recursos del Lord  Legislador y, engañado, el Rey libera del Pozo de la Ascensión algo que  debería haber quedado oculto para siempre. Un enorme peligro acecha a la  humanidad, y la verdadera pregunta es si conseguirán detenerlo a tiempo.
