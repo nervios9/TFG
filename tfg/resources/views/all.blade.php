@@ -1,10 +1,12 @@
-@include ('master')
+@include ('header')
 
 <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
-    <div class="container">
+<div class="container d-flex justify-content-center align-items-center centered-div">
         <h1>Catalogo de Libros</h1>
     <form method="GET" action="{{ route('buscador') }}">
             @csrf
+    </div>
+            <div class="container d-flex justify-content-center align-items-center centered-div">
         <select name="opcion">
             @foreach($listaGeneros as $genero)
                 <option value="{{ $genero->id }}">{{ $genero->genero }}</option>
@@ -12,6 +14,8 @@
         </select>
         <button type="submit">Buscar</button>
     </form>
+</div>
+    <div class="container">
         <table>
             @foreach($listaLibros ->chunk(5) as $fila)
                 <tr>
@@ -24,4 +28,4 @@
             @endforeach
         </table>
       
-       
+    </div>

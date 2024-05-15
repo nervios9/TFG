@@ -1,4 +1,4 @@
-@include ('master')
+@include ('header')
 
     <h1>Crear Usuario</h1>
 

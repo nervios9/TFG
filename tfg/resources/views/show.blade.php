@@ -3,9 +3,9 @@
 <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
 @section('show', 'info peliculas')
 @section( 'content')
-<div class="container">
-   
-<h1>{{ $libro->nombre }}</h1>
+ <div class="container d-flex justify-content-center align-items-center centered-div">
+    <div class="text-center">
+<h1 >{{ $libro->nombre }}</h1>
 
 
     <img style="height: 400px" id="imagenesPeliculas" src="{{url('images/libros/' .$libro->imagen)}}"alt="portada libro">
@@ -14,14 +14,16 @@
    
 
        
-<p>Autor: {{ $libro->escritor->nombre }} {{ $libro->escritor->apellidos }}</p>
+<p><b>Autor:</b> {{ $libro->escritor->nombre }} {{ $libro->escritor->apellidos }}</p>
    
-<p>Genero: {{$libro ->genero->genero}}</p>
+<p><b>Genero:</b> {{$libro ->genero->genero}}</p>
 
-<p>Fecha de estreno: {{ $libro->fecha_salida }}</p>
-<p>Paginas: {{ $libro->paginas}}</p>
+<p><b>Fecha de estreno:</b> {{ $libro->fecha_salida }}</p>
+<p><b>Paginas:</b> {{ $libro->paginas}}</p>
 
-<p>Synopsis: {{ $libro->synopsis}}</p>
+<p style="white-space: pre-line;"class=""> <b>Synopsis:</b>
+    <p class="text-justify">
+ {{ $libro->synopsis}}</p></p>
 
 
     <form method="POST" action="{{ route('librosLeidos') }}">
@@ -30,7 +32,7 @@
         <input type="hidden" name="libro_id" value="{{ $libro->id }}">
         <input type="checkbox" name="leido">
         Libro Leído
-        <button type="submit">Guardar</button>
+        <button type="submit" id="miBoton" >Guardar</button>
        
     </form>
 
@@ -56,17 +58,36 @@
 
 
 <h2>Comentarios:</h2>
-<ul>
+
     @foreach ($comentarios as $comentario)
-        <li>
-           
-         {{--  {{ $comentario->users->name }} --}}
-            {{ $comentario->comentario }} - 
-        </li>
+        
+           <p>
+          <b> {{ $comentario->user->name }} </b>
+            {{ $comentario->comentario }} 
+        </p>
     @endforeach
-</ul>
+
 
 
 </div>
 @endsection
 @yield('content')
+
+
+<script>
+    // Obtener el botón por su ID
+    var boton = document.getElementById('miBoton');
+
+    // Realizar una solicitud al servidor para verificar si el botón debe ser deshabilitado
+    fetch('/deshabilitar-boton')
+        .then(response => response.json())
+        .then(data => {
+            // Deshabilitar el botón si la respuesta indica que debe ser deshabilitado
+            if (data.deshabilitar) {
+                boton.disabled = true;
+            }
+        })
+        .catch(error => {
+            console.error('Error al deshabilitar el botón:', error);
+        });
+</script>

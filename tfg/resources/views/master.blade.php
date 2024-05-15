@@ -1,45 +1,60 @@
-<?php session_start();?>
+ @include('header')
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
-    <link rel="stylesheet" href="{{ asset('bootstrap-4.0.0-dist/css/bootstrap.css') }}">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" >
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" ></script>
-    <script src="{{ asset('js/app.js') }}" defer></script>
-       <title>@yield('title')</title>
-  
-</head>
 
-<script src="/bootstrap-4.0.0-dist/js/bootstrap.js"></script>
-
-<body>
- 
-    @include('header')
-    @include('partials.alerta_cookies')
-    <?php
-     
-    if (!isset($_SESSION['logged_in'])) {
-        ?>
-       
+ <h1 class="d-flex justify-content-center  align-items-center centered-h1">Recien salidos de la Imprenta</h1>
+ <div class="container d-flex justify-content-center align-items-center centered-div">
     
-       <?php
-    }else{
-        ?>
-               
-             
-    <?php
-    }
-    @include('carrousel') 
-?>
-   <?php
-    @include('carrousel')
-   ?>
-     
+ <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        @foreach ($elementos as $key => $libros)
+            <div class="carousel-item {{ $key === 0 ? 'active' : '' }}">
+                <a href="{{route('show',[$libros->id])}}"><img style="height: 300px"  src="{{url('images/libros/' .$libros->imagen)}}"alt="Portada Libro"></a></td>
+              
+                <div class="carousel-caption d-none d-md-block">
+                   
+                    
+                </div>
+            </div>
+        @endforeach
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+</div>
 
-</body>   
+
+
+<h1 class="d-flex justify-content-center  align-items-center centered-h1">Autor destacado de esta semana: J.R.R. TOLKIEN </h1>
+<div class="container d-flex justify-content-center align-items-center centered-div">
+    
+    <div id="carouselExampleControls2" class="carousel slide d-flex justify-content-center  align-items-center" data-bs-ride="carousel">
+       <div class="carousel-inner">
+           @foreach ($elementos2 as $key => $libros)
+               <div class="carousel-item {{ $key === 0 ? 'active' : '' }}">
+                <a href="{{ route('show', [$libros->id ]) }}"><img style="height: 300px"  src="{{url('images/libros/' .$libros->imagen)}}"alt="Portada Libro"></a></td>
+                 
+                   <div class="carousel-caption d-none d-md-block">
+                      
+                       
+                   </div>
+               </div>
+           @endforeach
+        </div>
+ <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+    </div>
+   </div>
+
+  

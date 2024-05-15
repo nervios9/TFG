@@ -10,10 +10,10 @@ class LibrosLeidos extends Model
     use HasFactory;
 
 
-    public function libros() {
+    public function libro() {
         return $this->belongsTo('App\Models\Libro');
     }
-    public function usuario() {
-        return $this->belongsTo('App\Models\Usuario');
+    public function user() {
+        return $this->belongsTo('App\Models\User');
     }
 }

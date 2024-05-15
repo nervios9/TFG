@@ -200,20 +200,7 @@ class LibrosTableSeeder extends Seeder
            
         ]);
        
-        DB::table('libros')->insert([
-            'nombre' => 'Una corte de rosas y espinas',
-            'fecha_salida' => '2016-05-24',
-            'paginas' => '456',
-            'imagen' => 'cortespinas.jpg',
-            'synopsis' => ' Feyre está desesperada, su vida y la de su familia dependen de ella. Enfrentada al hambre más absoluto,
-            no dudará en ir al bosque prohibido y matar si es necesario. Pero su osadía la convierte en prisionera del misterioso 
-            Tamlin, quien a pesar de su aparente frialdad la hará descubrir una ardiente pasión que marcará su destino.
-            Lejos de su familia y su mundo, Feyre tendrá que tomar una decisión capital para salvar todo lo que ama.',
-            'genero_id' => '1',
-            'escritor_id' => '5',
-            'subgenero_id'=>'2',
-           
-        ]);
+    
         DB::table('libros')->insert([
             'nombre' => 'Nuncanoche',
             'fecha_salida' => '2018-05-10',
@@ -333,6 +320,20 @@ class LibrosTableSeeder extends Seeder
             Lo único que sé es que nuestras vidas corren peligro, y todo es culpa mía porque aún le debo un favor a la Anciana… y claramente ha venido a buscarlo.',
             'genero_id' => '1',
             'escritor_id' => '7',
+            'subgenero_id'=>'2',
+           
+        ]);
+        DB::table('libros')->insert([
+            'nombre' => 'Una corte de rosas y espinas',
+            'fecha_salida' => '2016-05-24',
+            'paginas' => '456',
+            'imagen' => 'cortespinas.jpg',
+            'synopsis' => ' Feyre está desesperada, su vida y la de su familia dependen de ella. Enfrentada al hambre más absoluto,
+            no dudará en ir al bosque prohibido y matar si es necesario. Pero su osadía la convierte en prisionera del misterioso 
+            Tamlin, quien a pesar de su aparente frialdad la hará descubrir una ardiente pasión que marcará su destino.
+            Lejos de su familia y su mundo, Feyre tendrá que tomar una decisión capital para salvar todo lo que ama.',
+            'genero_id' => '1',
+            'escritor_id' => '5',
             'subgenero_id'=>'2',
            
         ]);

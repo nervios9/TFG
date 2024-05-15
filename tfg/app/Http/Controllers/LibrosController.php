@@ -7,11 +7,12 @@ use App\Models\Libro;
 use App\Models\Genero;
 use App\Models\Comentarios;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 class LibrosController extends Controller
 {
     public function index()
     {
-       
+        //$listaLibros = Libro::orderBy('nombre', 'asc')->get();
         $listaLibros = Libro::all();
         $listaGeneros = Genero::all();
         return view('all', ['listaLibros' => $listaLibros,'listaGeneros' => $listaGeneros]);
@@ -60,12 +61,24 @@ class LibrosController extends Controller
         return view('show', compact('libro', 'comentarios'));
     }
 
-    public function carrousel()
-    {
-        $libros = Libro::all();
-        $listaGeneros = Genero::all();
-        return view('carrousel', ['libros' => $libros,'listaGeneros' => $listaGeneros]);
+    public function carrousel(){
+
+    
+
+// Obtener la fecha actual
+$fechaActual = Carbon::now();
+
+// Consulta utilizando Eloquent para obtener los 5 primeros elementos ordenados por la diferencia entre la fecha en la tabla y la fecha actual
+$elementos = Libro::orderByRaw('ABS(DATEDIFF(fecha_salida, ?))', [$fechaActual])
+                     ->limit(5)
+                     ->get();
+
+
+    $escritorId = 2;
+
+$elementos2 = Libro::where('escritor_id', $escritorId)->get();
+        return view('master', ['elementos' => $elementos,'elementos2' => $elementos2]);
     }
-   
+  
   
 }

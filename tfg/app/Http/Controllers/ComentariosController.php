@@ -14,7 +14,7 @@ class ComentariosController extends Controller
         // Crear un nuevo comentario
         $nuevoComentario = new Comentarios();
         $nuevoComentario->comentario = $request->input('comentario');
-        $nuevoComentario->usuario_id = $request->input('usuario');
+        $nuevoComentario->user_id = $request->input('usuario');
         $nuevoComentario->libro_id = $request->input('libro_id');
         $nuevoComentario->save();
         return redirect()->back()->with('perfecto', 'Comentario agregado');
