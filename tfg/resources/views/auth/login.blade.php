@@ -1,7 +1,7 @@
 
 <x-guest-layout>
     <div class="d-flex justify-content-center align-items-center flex-column vh-100">
-        <h1 class="display-2 text-center">Libro antes que destino</h1>
+        <h1 class="display-2 text-xl text-center">Libro antes que destino</h1>
     </div>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
