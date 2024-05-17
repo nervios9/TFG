@@ -1,4 +1,5 @@
 @include ('header')
+
 <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
     <div class="container">
         <h1>Buscador:</h1>
