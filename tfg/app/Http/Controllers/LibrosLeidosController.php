@@ -26,21 +26,16 @@ class LibrosLeidosController extends Controller
 
         return view('dashboard', ['listaLibrosLeidos' => $listaLibrosLeidos]);
 }
-public function comprobarBoton($id)
-    {
-        $userId = Auth::id();
-        // Realiza la consulta
-        $resultado = LibrosLeidos::where('usuario_id', $userId)
-        ->where('libro_id', $libroId)
-        ->first();
+public function eliminarLibrosLeidos(Request $request){
+       
 
-        // Determina si el botón debe estar habilitado o no
-        $deshabilitar =  true;
+    $nuevoLibroLeido = new LibrosLeidos();
+    $nuevoLibroLeido ->libro_id = $request->input('libro_id');
+    $nuevoLibroLeido ->usuario_id = $request->input('usuario');
+    $nuevoLibroLeido ->save();
 
-        // Pasa la variable a la vista
-        return response()->json(['deshabilitar' => $deshabilitar]);
-    }
-
+    
+    return redirect()->back()->with('perfecto', 'Libro leido agregado');
 }
 
 

@@ -30,9 +30,9 @@
         @csrf
         <input type="hidden" name="usuario" value="{{ Auth::user()->id }}">
         <input type="hidden" name="libro_id" value="{{ $libro->id }}">
-        <input type="checkbox" name="leido">
-        Libro Leído
-        <button type="submit" id="miBoton" >Guardar</button>
+      
+        
+        <button type="submit" id="miBoton" >Añadir libro leído</button>
        
     </form>
 

@@ -1,5 +1,6 @@
 <?php
-
+use App\Http\Controllers\LibrosController;
+use App\Http\Controllers\LibrosLeidosController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,6 +34,7 @@ Route::get('/show/{id}', function ($id) {
     return $librosController->show($id);
 });
 
+
 Route::get('/show/{id}', function ($id) {
     $librosLeidosController = new LibrosLeidosController();
     return $librosLeidosController->comprobarBoton($id);
@@ -46,7 +48,7 @@ Route::get('/all','LibrosController@index');
 Route::get('/buscador','LibrosController@find')->name('buscador');
 Route::get('/recomend','LibrosController@recomend')->name('recomend');
 Route::get('/recomendador','LibrosController@recomendador')->name('recomendador');
-//Route::get('/mostrarLeidos{id}', 'LibrosLeidosController@leidos')->name('mostrarLeidos');
+//Route::post('/eliminarLibrosLeidos', 'LibrosLeidosController@eliminarLibrosLeidos')->name('eliminarLibrosLeidos');
 Route::post('/librosLeidos', 'LibrosLeidosController@librosLeidos')->name('librosLeidos');
 Route::post('/enviarDatos', 'ComentariosController@recibirDatos')->name('enviarDatos');
 Route::get('/registrar', 'UsuariosController@crearUsuarioForm');
