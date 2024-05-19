@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Libro;
 use App\Models\Genero;
 use App\Models\Comentarios;
+use App\Models\Escritor;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 class LibrosController extends Controller
@@ -87,5 +88,47 @@ $elementos2 = Libro::where('escritor_id', $escritorId)->get();
         return view('master', ['elementos' => $elementos,'elementos2' => $elementos2]);
     }
   
-  
+    public function edit($id) {
+        $libros = Libro::find($id);
+        $escritor = Escritor::all();
+        $generos = Genero::all();
+        return view('librosForm', array('libros' => $libros, 'escritor' => $escritor,'generos' => $generos));
+    }
+    public function destroy($id) {
+        $p = Libro::find($id);
+        $p->delete();
+        return redirect()->route('backend');
+    }
+    public function update($id, Request $r) {
+        $p = Libro::find($id);
+        $p->nombre = $r->nombre;
+        $p->fecha_salida = $r->fecha_salida;
+        $p->paginas = $r->paginas;
+        $p->imagen = $r->imagen;
+        $p->synopsis = $r->synopsis;
+        $p->genero_id = $r->genero_id;
+        $p->escritor_id = $r->escritor_id;
+        $p->subgenero_id =$r->subgenero_id;
+        $p->save();
+        return redirect()->route('backend');
+    }
+    public function store(Request $r) {
+        $p = new Libro();
+        $p->nombre = $r->nombre;
+        $p->fecha_salida = $r->fecha_salida;
+        $p->paginas = $r->paginas;
+        $p->imagen = $r->imagen;
+        $p->synopsis = $r->synopsis;
+        $p->genero_id = $r->genero_id;
+        $p->escritor_id = $r->escritor_id;
+        $p->subgenero_id =$r->subgenero_id;
+        $p->save();
+        return redirect()->route('backend');
+    }
+    public function create() {
+        
+        $escritor = Escritor::all();
+        $generos = Genero::all();
+        return view('librosForm', array( 'escritor' => $escritor,'generos' => $generos));
+    }
 }

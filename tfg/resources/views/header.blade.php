@@ -53,3 +53,17 @@
     <a  class="opctionsdesplegable" href="{{ url('/backend') }}">Backend</a><br>
    {{-- <a class="opctionsdesplegable" href="{{ url('/mostrarLeidos', [Auth::user()->id]) }}">Libros Leidos</a><br>--}}
 </nav>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const iconoMenu = document.getElementById('icono-menu');
+        const menuDesplegable = document.getElementById('menu-desplegable');
+        iconoMenu.addEventListener('click', function() {
+            // Si el menú está oculto, mostrarlo; si está visible, ocultarlo
+            if (menuDesplegable.style.left === '-250px') {
+                menuDesplegable.style.left = '0';
+            } else {
+                menuDesplegable.style.left = '-250px';
+            }
+        });
+    });
+</script>
