@@ -106,7 +106,7 @@ header{
     left: -250px; /* Menú oculto por defecto */
     width: 250px;
     height: 100%;
-    background-color:aquamarine;
+    background-color:#f5720c;
     transition: left 0.3s ease;
     padding-top: 35px;
 }
@@ -123,4 +123,7 @@ padding-top: 10px;
 }
 .imagenesLibros{
     margin: 5px;
+}
+.border-1px {
+    border: 1px solid #000; /* Cambia #000 al color que desees */
 }

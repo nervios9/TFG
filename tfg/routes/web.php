@@ -45,6 +45,7 @@ Route::get('/show{id}', 'LibrosController@show')->name('show');
 Route::get('config{id}', 'UsuariosController@')->name('config');
 Route::get('read', function () {return view('read');});
 Route::get('/all','LibrosController@index');
+Route::get('/backend','LibrosController@backend')->name('backend');
 Route::get('/buscador','LibrosController@find')->name('buscador');
 Route::get('/recomend','LibrosController@recomend')->name('recomend');
 Route::get('/recomendador','LibrosController@recomendador')->name('recomendador');

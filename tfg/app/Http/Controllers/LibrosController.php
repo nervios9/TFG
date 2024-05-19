@@ -17,6 +17,13 @@ class LibrosController extends Controller
         $listaGeneros = Genero::all();
         return view('all', ['listaLibros' => $listaLibros,'listaGeneros' => $listaGeneros]);
     }
+    public function backend()
+    {
+        //$listaLibros = Libro::orderBy('nombre', 'asc')->get();
+        $listaLibros = Libro::all();
+        
+        return view('backend', ['listaLibros' => $listaLibros]);
+    }
     public function recomendador()
     {
        
