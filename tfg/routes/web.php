@@ -51,11 +51,30 @@ Route::get('/recomend','LibrosController@recomend')->name('recomend');
 Route::get('/recomendador','LibrosController@recomendador')->name('recomendador');
 //Route::post('/eliminarLibrosLeidos', 'LibrosLeidosController@eliminarLibrosLeidos')->name('eliminarLibrosLeidos');
 Route::post('/librosLeidos', 'LibrosLeidosController@librosLeidos')->name('librosLeidos');
+
+Route::get('/librosIndex', 'librosController@backend')->name('librosIndex');
 Route::get('/librosEdit{id}', 'librosController@edit')->name('librosEdit');
 Route::patch('librosUpdate/{libros}', 'LibrosController@update')->name('librosUpdate');
 Route::get('librosCreate', 'librosController@create')->name('librosCreate');
 Route::post('librosStore/{libros?}', 'LibrosController@store')->name('librosStore');
 Route::delete('/librosDestroy{libros}', 'librosController@destroy')->name('librosDestroy');
+
+Route::get('/escritorIndex', 'EscritorController@backend')->name('escritorIndex');
+Route::get('/escritorEdit{id}', 'EscritorController@edit')->name('escritorEdit');
+Route::patch('escritorUpdate/{escritor}', 'EscritorController@update')->name('escritorUpdate');
+Route::get('escritorCreate', 'EscritorController@create')->name('escritorCreate');
+Route::post('escritorStore/{escritor?}', 'EscritorController@store')->name('escritorStore');
+Route::delete('/escritorDestroy{escritor}', 'EscritorController@destroy')->name('escritorDestroy');
+
+Route::get('/generoIndex', 'GeneroController@backend')->name('generoIndex');
+Route::get('/generoEdit{id}', 'GeneroController@edit')->name('generoEdit');
+Route::patch('generoUpdate/{genero}', 'GeneroController@update')->name('generoUpdate');
+Route::get('generoCreate', 'GeneroController@create')->name('generoCreate');
+Route::post('generosStore/{genero?}', 'GeneroController@store')->name('generosStore');
+Route::delete('/generoDestroy{genero}', 'GeneroController@destroy')->name('generoDestroy');
+
+Route::get('/backend', function () {return view('backend');})->name('backend');
+
 Route::post('/enviarDatos', 'ComentariosController@recibirDatos')->name('enviarDatos');
 Route::get('/registrar', 'UsuariosController@crearUsuarioForm');
 Route::post('/registrar', 'UsuariosController@guardarUsuario');

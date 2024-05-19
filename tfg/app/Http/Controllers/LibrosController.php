@@ -18,13 +18,7 @@ class LibrosController extends Controller
         $listaGeneros = Genero::all();
         return view('all', ['listaLibros' => $listaLibros,'listaGeneros' => $listaGeneros]);
     }
-    public function backend()
-    {
-        //$listaLibros = Libro::orderBy('nombre', 'asc')->get();
-        $listaLibros = Libro::all();
-        
-        return view('backend', ['listaLibros' => $listaLibros]);
-    }
+
     public function recomendador()
     {
        
@@ -88,6 +82,14 @@ $elementos2 = Libro::where('escritor_id', $escritorId)->get();
         return view('master', ['elementos' => $elementos,'elementos2' => $elementos2]);
     }
   
+
+    public function backend()
+    {
+        
+        $listaLibros = Libro::all();
+        
+        return view('librosIndex', ['listaLibros' => $listaLibros]);
+    }
     public function edit($id) {
         $libros = Libro::find($id);
         $escritor = Escritor::all();
@@ -97,7 +99,7 @@ $elementos2 = Libro::where('escritor_id', $escritorId)->get();
     public function destroy($id) {
         $p = Libro::find($id);
         $p->delete();
-        return redirect()->route('backend');
+        return redirect()->route('librosIndex');
     }
     public function update($id, Request $r) {
         $p = Libro::find($id);
@@ -110,7 +112,7 @@ $elementos2 = Libro::where('escritor_id', $escritorId)->get();
         $p->escritor_id = $r->escritor_id;
         $p->subgenero_id =$r->subgenero_id;
         $p->save();
-        return redirect()->route('backend');
+        return redirect()->route('librosIndex');
     }
     public function store(Request $r) {
         $p = new Libro();
@@ -123,7 +125,7 @@ $elementos2 = Libro::where('escritor_id', $escritorId)->get();
         $p->escritor_id = $r->escritor_id;
         $p->subgenero_id =$r->subgenero_id;
         $p->save();
-        return redirect()->route('backend');
+        return redirect()->route('librosIndex');
     }
     public function create() {
         

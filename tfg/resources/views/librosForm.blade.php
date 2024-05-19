@@ -77,7 +77,7 @@
             </td>
      </tr>
         <tr>
-            <td class='sinbordes'><a href="{{ route('backend') }}">Volver al listado</a></td>
+            <td class='sinbordes'><a href="{{ route('librosIndex') }}">Volver al listado</a></td>
             <td class='sinbordes'><input type="submit"></td>
         </tr>
     </table>
