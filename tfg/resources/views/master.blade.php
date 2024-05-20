@@ -30,7 +30,7 @@
 
 
 
-<h1 class="d-flex justify-content-center  align-items-center centered-h1">Autor destacado de esta semana: J.R.R. TOLKIEN </h1>
+<h1 class="d-flex justify-content-center  align-items-center centered-h1">Autor destacado: {{ Session::get('nombre') }} </h1>
 <div class="container d-flex justify-content-center align-items-center centered-div">
     
     <div id="carouselExampleControls2" class="carousel slide d-flex justify-content-center  align-items-center" data-bs-ride="carousel">

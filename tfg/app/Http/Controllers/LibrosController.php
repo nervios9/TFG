@@ -9,6 +9,7 @@ use App\Models\Comentarios;
 use App\Models\Escritor;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Session;
 class LibrosController extends Controller
 {
     public function index()
@@ -72,11 +73,30 @@ $fechaActual = Carbon::now();
 
 // Consulta utilizando Eloquent para obtener los 5 primeros elementos ordenados por la diferencia entre la fecha en la tabla y la fecha actual
 $elementos = Libro::orderByRaw('ABS(DATEDIFF(fecha_salida, ?))', [$fechaActual])
-                     ->limit(5)
+                     ->limit(15)
                      ->get();
+// Obtener el número total de escritores
+$totalEscritores = Escritor::count();
 
+// Generar un ID de escritor aleatorio entre 1 y el número total de escritores
+$escritorId = rand(1, $totalEscritores);
 
-    $escritorId = 2;
+// Obtener el escritor con el ID aleatorio
+$resul = Escritor::find($escritorId);
+
+// Verificar si se encontró un escritor con el ID aleatorio
+if ($resul) {
+    // Concatenar el nombre y los apellidos del escritor
+    $nombre = $resul->nombre . ' ' . $resul->apellidos;
+
+    // Guardar el nombre en la sesión
+    Session::put('nombre', $nombre);
+} else {
+    // Si no se encuentra un escritor con el ID aleatorio, mostrar un mensaje de error
+    Session::flash('error', 'No se encontró ningún escritor con el ID aleatorio.');
+}
+
+    //$escritorId = 2;
 
 $elementos2 = Libro::where('escritor_id', $escritorId)->get();
         return view('master', ['elementos' => $elementos,'elementos2' => $elementos2]);

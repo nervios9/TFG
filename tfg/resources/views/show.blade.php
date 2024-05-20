@@ -64,6 +64,7 @@
            <p>
           <b> {{ $comentario->user->name }} </b>
             {{ $comentario->comentario }} 
+            <b class="small">{{$comentario->created_at}}</b>
         </p>
     @endforeach
 
