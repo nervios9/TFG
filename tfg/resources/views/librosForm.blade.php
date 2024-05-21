@@ -64,13 +64,13 @@
         </tr>
         <tr>
             
-            <td class='sinbordes'>Genero:</td>
+            <td class='sinbordes'>SubGenero:</td>
             <td class='sinbordes'>
-                <select name="subgenero_id">
-                    <option value="">Seleccione un subgénero</option>
-                    @foreach($generos as $genero)
-                        <option value="{{ $libros->subgenero_id }}" {{ (isset($libros) && $libros->subgenero_id == $genero->id) ? 'selected' : '' }}>
-                            {{ $genero->genero }}
+                <select name="subgenero_id" >
+                    <option value="">Seleccione un género</option>
+                    @foreach($generos as $subgenero)
+                        <option value="{{ $subgenero->id }}" {{ (isset($libros) && $libros->subgenero_id == $subgenero->id) ? 'selected' : '' }}>
+                            {{ $subgenero->genero }}
                         </option>
                     @endforeach
                 </select>
