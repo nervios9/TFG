@@ -8,7 +8,7 @@
     <div class="carousel-inner">
         @foreach ($elementos as $key => $libros)
             <div class="carousel-item {{ $key === 0 ? 'active' : '' }}">
-                <a href="{{route('show',[$libros->id])}}"><img style="height: 300px"  src="{{url('images/libros/' .$libros->imagen)}}"alt="Portada Libro"></a></td>
+                <a href="{{route('show',[$libros->id])}}"><img style="height: 300px"  src="{{url('images/libros/' .$libros->imagen)}}"alt="Portada Libro"  onerror="this.src='{{ url('images/libros/WIP.png') }}'"></a></td>
               
                 <div class="carousel-caption d-none d-md-block">
                    
@@ -37,7 +37,7 @@
        <div class="carousel-inner">
            @foreach ($elementos2 as $key => $libros)
                <div class="carousel-item {{ $key === 0 ? 'active' : '' }}">
-                <a href="{{ route('show', [$libros->id ]) }}"><img style="height: 300px"  src="{{url('images/libros/' .$libros->imagen)}}"alt="Portada Libro"></a></td>
+                <a href="{{ route('show', [$libros->id ]) }}"><img style="height: 300px"  src="{{url('images/libros/' .$libros->imagen)}}"alt="Portada Libro" onerror="this.src='{{ url('images/libros/WIP.png') }}'"></a></td>
                  
                    <div class="carousel-caption d-none d-md-block">
                       
