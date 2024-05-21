@@ -128,9 +128,9 @@ $elementos2 = Libro::where('escritor_id', $escritorId)->get();
         return redirect()->route('librosIndex');
     }
     public function create() {
-        
+        $libros = Libro::all();
         $escritor = Escritor::all();
         $generos = Genero::all();
-        return view('librosForm', array( 'escritor' => $escritor,'generos' => $generos));
+        return view('librosForm', array(  'libro' => $libros,'escritor' => $escritor,'generos' => $generos));
     }
 }

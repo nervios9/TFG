@@ -130,3 +130,12 @@ padding-top: 10px;
 .sinbordes{
     border: none;
 }
+.centrado{
+    text-align: center;
+}
+input.grande{
+    margin: 10px;
+    padding: 20px;
+    width: 50%;
+    font-size: x-large;
+}
