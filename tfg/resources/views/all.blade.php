@@ -20,7 +20,7 @@
         @foreach($listaLibros->chunk(5) as $filaIndex => $fila)
             <tr class="filaLibros {{ $filaIndex >= 2 ? 'd-none' : '' }}">
                 @foreach($fila as $libros)
-                    <td class="imagenesLibros"><a href="{{route('show',[$libros->id])}}"><img style="height: 300px" src="{{url('images/libros/' .$libros->imagen)}}" alt="Portada Libro"></a></td>
+                    <td class="imagenesLibros"><a href="{{route('show',[$libros->id])}}"><img style="height: 300px" src="{{url('images/libros/' .$libros->imagen)}}" alt="Portada Libro" onerror="this.onerror=null;this.src=´'images/libros/WIP.png'´;"></a></td>
                 @endforeach
             </tr>
         @endforeach
