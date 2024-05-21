@@ -8,7 +8,7 @@
 <h1 >{{ $libro->nombre }}</h1>
 
 
-    <img style="height: 400px" id="imagenesPeliculas" src="{{url('images/libros/' .$libro->imagen)}}"alt="portada libro">
+<img style="height: 400px" id="imagenesPeliculas" src="{{ url('images/libros/' . $libro->imagen) }}" alt="portada libro" onerror="this.src='{{ url('images/libros/WIP.png') }}'">
 
 
    

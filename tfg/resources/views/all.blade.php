@@ -2,6 +2,7 @@
 
 <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
 <div class="container d-flex justify-content-center mt-3 align-items-center centered-div">
+   
     <h1>Catalogo de Libros</h1>
     <form method="GET" action="{{ route('buscador') }}">
         @csrf
@@ -19,9 +20,12 @@
     <table id="catalogoLibros">
         @foreach($listaLibros->chunk(5) as $filaIndex => $fila)
             <tr class="filaLibros {{ $filaIndex >= 2 ? 'd-none' : '' }}">
-                @foreach($fila as $libros)
-                    <td class="imagenesLibros"><a href="{{route('show',[$libros->id])}}"><img style="height: 300px" src="{{url('images/libros/' .$libros->imagen)}}" alt="Portada Libro" onerror="this.onerror=null;this.src=´'images/libros/WIP.png'´;"></a></td>
-                @endforeach
+              
+        @foreach($fila as $libros)
+            
+             <td class="imagenesLibros"><a href="{{route('show',[$libros->id])}}"><img style="height: 300px" src="{{url('images/libros/' .$libros->imagen)}}"  onerror="this.src='{{ url('images/libros/WIP.png') }}'"  ></a></td>
+             
+        @endforeach
             </tr>
         @endforeach
     </table>
