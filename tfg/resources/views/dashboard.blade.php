@@ -21,7 +21,7 @@
               @foreach($listaLibrosLeidos ->chunk(5) as $fila)
                 <tr>
                     @foreach($fila as $librosLeidos)
-                        <td class="imagenesLibros"><a href="{{route('show',[$librosLeidos->libro_id])}}"><img style="height: 300px"  src="{{url('images/libros/' .$librosLeidos->libro->imagen)}}"alt="Portada Libro"></a></td>
+                        <td class="imagenesLibros"><a href="{{route('show',[$librosLeidos->libro_id])}}"><img style="height: 300px"  src="{{url('images/libros/' .$librosLeidos->libro->imagen)}}"alt="Portada Libro"  onerror="this.src='{{ url('images/libros/WIP.png') }}'"></a></td>
                         
                     @endforeach
                 </tr>

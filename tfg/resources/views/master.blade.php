@@ -8,7 +8,7 @@
     <div class="carousel-inner">
         @foreach ($elementos as $key => $libros)
             <div class="carousel-item {{ $key === 0 ? 'active' : '' }}">
-                <a href="{{route('show',[$libros->id])}}"><img style="height: 300px"  src="{{url('images/libros/' .$libros->imagen)}}"alt="Portada Libro"></a></td>
+                <a href="{{route('show',[$libros->id])}}"><img style="height: 300px"  src="{{url('images/libros/' .$libros->imagen)}}"alt="Portada Libro"  onerror="this.src='{{ url('images/libros/WIP.png') }}'"></a></td>
               
                 <div class="carousel-caption d-none d-md-block">
                    
@@ -30,14 +30,14 @@
 
 
 
-<h1 class="d-flex justify-content-center  align-items-center centered-h1">Autor destacado de esta semana: J.R.R. TOLKIEN </h1>
+<h1 class="d-flex justify-content-center  align-items-center centered-h1">Autor destacado: {{ Session::get('nombre') }} </h1>
 <div class="container d-flex justify-content-center align-items-center centered-div">
     
     <div id="carouselExampleControls2" class="carousel slide d-flex justify-content-center  align-items-center" data-bs-ride="carousel">
        <div class="carousel-inner">
            @foreach ($elementos2 as $key => $libros)
                <div class="carousel-item {{ $key === 0 ? 'active' : '' }}">
-                <a href="{{ route('show', [$libros->id ]) }}"><img style="height: 300px"  src="{{url('images/libros/' .$libros->imagen)}}"alt="Portada Libro"></a></td>
+                <a href="{{ route('show', [$libros->id ]) }}"><img style="height: 300px"  src="{{url('images/libros/' .$libros->imagen)}}"alt="Portada Libro" onerror="this.src='{{ url('images/libros/WIP.png') }}'"></a></td>
                  
                    <div class="carousel-caption d-none d-md-block">
                       

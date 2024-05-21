@@ -10,7 +10,7 @@
            
                 <tr>
                     @foreach($fila as $libros)
-                        <td class="imagenesLibros"><a href="{{route('show',[$libros->id])}}"><img style="height: 300px"  src="{{url('images/libros/' .$libros->imagen)}}"alt="Portada Libro"></a></td>
+                        <td class="imagenesLibros"><a href="{{route('show',[$libros->id])}}"><img style="height: 300px"  src="{{url('images/libros/' .$libros->imagen)}}"alt="Portada Libro"  onerror="this.src='{{ url('images/libros/WIP.png') }}'"></a></td>
                         
                     @endforeach
                 </tr>

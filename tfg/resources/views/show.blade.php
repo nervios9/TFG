@@ -8,7 +8,7 @@
 <h1 >{{ $libro->nombre }}</h1>
 
 
-    <img style="height: 400px" id="imagenesPeliculas" src="{{url('images/libros/' .$libro->imagen)}}"alt="portada libro">
+<img style="height: 400px" id="imagenesPeliculas" src="{{ url('images/libros/' . $libro->imagen) }}" alt="portada libro" onerror="this.src='{{ url('images/libros/WIP.png') }}'">
 
 
    
@@ -64,6 +64,7 @@
            <p>
           <b> {{ $comentario->user->name }} </b>
             {{ $comentario->comentario }} 
+            <b class="small">{{$comentario->created_at}}</b>
         </p>
     @endforeach
 
