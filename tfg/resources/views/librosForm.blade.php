@@ -64,7 +64,7 @@
         </tr>
         <tr>
             
-            <td class='sinbordes'>Genero:</td>
+            <td class='sinbordes'>SubGenero:</td>
             <td class='sinbordes'>
                 <select name="subgenero_id" >
                     <option value="">Seleccione un género</option>
