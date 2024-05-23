@@ -58,24 +58,4 @@
    </div>
 
   
-   <script>
-    function translatePage(language) {
-        const translations = {
-            'es': {
-                'carrousel2':'Autor destacado: {{ Session::get('nombre') }} {{ Session::get('apellidos') }}',
-                'carrousel1': 'Recien salidos de la Imprenta'
-            },
-            'en': {
-                'carrousel2': 'Featured author:  {{ Session::get('nombre') }} {{ Session::get('apellidos') }}',
-                'carrousel1': 'New Releases:'
-            }
-        };
-        // Actualizar el texto en la página según el idioma seleccionado
-        Object.keys(translations[language]).forEach(key => {
-            const element = document.getElementById(key);
-            if (element) {
-                element.textContent = translations[language][key];
-            }
-        });
-    }
-</script>
+  

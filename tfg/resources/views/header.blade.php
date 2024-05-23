@@ -26,7 +26,7 @@
         <a href="{{ url('/') }}">
             <img  src="{{ asset('images/Logo.png') }}" alt="Logo" class="logo"></img>
         </a>
-        <h1>&nbsp;&nbsp;Libro antes que destino</h1>  
+        <h1 id="titulo">&nbsp;&nbsp;Libro antes que destino</h1>  
         <?php
        
           ?>
@@ -66,4 +66,54 @@
             }
         });
     });
+</script>
+
+<script>
+    function translatePage(language) {
+        const translations = {
+            'es': {
+                'enviar':'Enviar',
+                'comentario':'Comentario',
+                'comentarios':'Comentarios',
+                'usuario':'Usuario:',
+                'miBoton':'Añadir libro leído',
+                'toggle-{{ $libro->id }}':'Leer Más',
+                'autor':'Autor: ',
+                'genero':'Genero: ',
+                'fecha':'Fecha de publicación:',
+                'paginas':'Paginas: ',
+                'titulo':'Libro antes que destino',
+                'user':'Zona de Usuario',
+                'carrousel2':'Autor destacado: {{ Session::get('nombre') }} {{ Session::get('apellidos') }}',
+                'carrousel1': 'Recien salidos de la Imprenta',
+                'catalogo':'Catalogo de libros',
+                'submit': 'Buscar',
+                'mostrarMas':'Mostrar Más'
+            },
+            'en': {
+                'enviar':'Send',
+                'comentario':'Comments',
+                'comentarios':'Comments',
+                'usuario':'User:',
+                'miBoton':'Add readed book',
+                'toggle-{{ $libro->id }}':'Read More',
+                'autor':'Writter: ',
+                'genero':'Genre: ',
+                'fecha':'Date of release: ',
+                'paginas':'Pages: ',
+                'user':'User zone',
+                'carrousel2': 'Featured author:  {{ Session::get('nombre') }} {{ Session::get('apellidos') }}',
+                'carrousel1': 'New Releases:',
+                'catalogo': 'All Books',
+                'submit': 'Submit',
+                'mostrarMas':'Show more'            }
+        };
+        // Actualizar el texto en la página según el idioma seleccionado
+        Object.keys(translations[language]).forEach(key => {
+            const element = document.getElementById(key);
+            if (element) {
+                element.textContent = translations[language][key];
+            }
+        });
+    }
 </script>

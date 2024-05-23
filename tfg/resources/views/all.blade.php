@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
 <div class="container d-flex justify-content-center mt-3 align-items-center centered-div">
    
-    <h1>Catalogo de Libros</h1>
+    <h1 id="catalogo">Catalogo de Libros</h1>
     <form method="GET" action="{{ route('buscador') }}">
         @csrf
     </div>
@@ -13,7 +13,7 @@
                 <option value="{{ $genero->id }}">{{ $genero->genero }}</option>
             @endforeach
         </select>
-        <button type="submit">Buscar</button>
+        <button type="submit" id="submit">Buscar</button>
     </form>
 </div>
 <div class="container">
@@ -60,3 +60,4 @@
         display: none;
     }
 </style>
+

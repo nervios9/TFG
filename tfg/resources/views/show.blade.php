@@ -9,10 +9,10 @@
 
         <img style="height: 400px" id="imagenesPeliculas" src="{{ url('images/libros/' . $libro->imagen) }}" alt="portada libro" onerror="this.src='{{ url('images/libros/WIP.png') }}'">
 
-        <p><b>Autor:</b> {{ $libro->escritor->nombre }} {{ $libro->escritor->apellidos }}</p>
-        <p><b>Genero:</b> {{ $libro->genero->genero }}</p>
-        <p><b>Fecha de estreno:</b> {{ $libro->fecha_salida }}</p>
-        <p><b>Paginas:</b> {{ $libro->paginas }}</p>
+        <p ><b id="autor">Autor:</b> {{ $libro->escritor->nombre }} {{ $libro->escritor->apellidos }}</p>
+        <p><b  id="genero">Genero:</b> {{ $libro->genero->genero }}</p>
+        <p ><b id="fecha">Fecha de estreno:</b> {{ $libro->fecha_salida }}</p>
+        <p><b  id="paginas">Paginas:</b> {{ $libro->paginas }}</p>
 
         <p style="white-space: pre-line;" class="">
             <b>Sinopsis:</b>
@@ -36,21 +36,21 @@
             @csrf
             <div class="input-row">
                 <input type="hidden" name="comment_id" id="post" placeholder="Nombre" />
-                <label for="nombre" class="form-label">Usuario:</label>
+                <label for="nombre" id="usuario" class="form-label">Usuario:</label>
                 <input class="form-control" type="text" name="nombre" id="nombre" readonly value="{{ Auth::user()->name }}" required/>
             </div>
             <div class="input-row">
-                <label for="comme" class="form-label">Comentario:</label>
+                <label for="comme" id="comentario" class="form-label">Comentario:</label>
                 <p class="emoji-picker-container">
-                    <textarea rows="6" class="form-control" type="text" name="comentario" id="comentario" placeholder="Agregue su comentario" required></textarea>
+                    <textarea rows="6" class="form-control" type="text" name="comentario" id="comentario" placeholder="Agregue su comentario" required style="resize: none;"></textarea>
                 </p>
             </div>
             <input type="hidden" name="usuario" value="{{ Auth::user()->id }}">
             <input type="hidden" name="libro_id" value="{{ $libro->id }}">
-            <button type="submit">Enviar</button>
+            <button id="enviar" type="submit">Enviar</button>
         </form>
 
-        <h2>Comentarios</h2>
+        <h2 id="comentarios" >Comentarios</h2>
 
         @foreach ($comentarios as $comentario)
             <p>
