@@ -9,7 +9,7 @@
         <form action="{{ route('librosUpdate', ['libros' => $libros->id]) }}" method="POST">
             @method('PATCH')
     @else
-        <form action="{{ route('librosStore') }}" method="POST">
+        <form action="{{ route('librosStore') }}" method="POST" enctype="multipart/form-data">>
     @endisset
     @csrf
     <br>

@@ -10,7 +10,10 @@ use App\Models\Escritor;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
 class LibrosController extends Controller
+
+
 {
     public function index()
     {
@@ -122,6 +125,19 @@ $elementos2 = Libro::where('escritor_id', $escritorId)->get();
         return redirect()->route('librosIndex');
     }
     public function update($id, Request $r) {
+
+
+        $r->validate([
+            'nombre' => 'required|string|max:255',
+            'fecha_salida' => 'required|date',
+            'paginas' => 'required|integer',
+            'imagen' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'synopsis' => 'required|string',
+            'genero_id' => 'required|integer',
+            'escritor_id' => 'required|integer',
+            'subgenero_id' => 'nullable|integer',
+        ]);
+
         $p = Libro::find($id);
         $p->nombre = $r->nombre;
         $p->fecha_salida = $r->fecha_salida;
@@ -131,31 +147,42 @@ $elementos2 = Libro::where('escritor_id', $escritorId)->get();
         $p->genero_id = $r->genero_id;
         $p->escritor_id = $r->escritor_id;
         $p->subgenero_id =$r->subgenero_id;
-        if ($request->hasFile('imagenes')) {
-            $file = $request->file('imagenes');
-            $destinationPath = url('images/libros'); // carpeta específica
-            $fileName = time() . '_' . $file->getClientOriginalName();
-            $file->move($destinationPath, $fileName);
-            $libro->imagen = $destinationPath . '/' . $fileName;
-        }
+      
+
         $p->save();
         return redirect()->route('librosIndex');
     }
-    public function store(Request $r) {
-        $p = new Libro();
-        $p->nombre = $r->nombre;
-        $p->fecha_salida = $r->fecha_salida;
-        $p->paginas = $r->paginas;
-        $imageName = time().'.'.$r->image;
-        $r->image->move(public_path('images/libros/'), $imageName);
-        $p->imagen = $r->imageName;
-        $p->synopsis = $r->synopsis;
-        $p->genero_id = $r->genero_id;
-        $p->escritor_id = $r->escritor_id;
-        $p->subgenero_id =$r->subgenero_id;
-        
-       
-        $p->save();
+    
+        public function store(Request $r)
+        {
+            $r->validate([
+                'nombre' => 'required|string|max:255',
+                'fecha_salida' => 'required|date',
+                'paginas' => 'required|integer',
+                'imagen' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'synopsis' => 'required|string',
+                'genero_id' => 'required|integer',
+                'escritor_id' => 'required|integer',
+                'subgenero_id' => 'nullable|integer',
+            ]);
+            $p = new Libro($r->all());
+            $p->nombre = $r->nombre;
+            $p->fecha_salida = $r->fecha_salida;
+            $p->paginas = $r->paginas;
+            $p->synopsis = $r->synopsis;
+            $p->genero_id = $r->genero_id;
+            $p->escritor_id = $r->escritor_id;
+            $p->subgenero_id =$r->subgenero_id;
+            
+      // Borrar la imagen anterior si existe
+      if ($r->hasFile('imagen')) {
+        $file = $r->file('imagen');
+        $fileName = time() . '_' . $file->getClientOriginalName();
+        $destinationPath = public_path('images/libros');
+        $file->move($destinationPath, $fileName);
+        $p->imagen = $fileName;
+    }
+            $p->save();
         return redirect()->route('librosIndex');
     }
     public function create() {
