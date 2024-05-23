@@ -28,7 +28,7 @@
         </tr>
         <tr>
             <td class='sinbordes'>Imagen:</td>
-            <td class='sinbordes'><input type="text" name="imagen" value="{{ $libros->imagen ?? '' }}" required></td>
+            <td class='sinbordes'><input type="file" name="imagen"  ></td>
         </tr>
         <tr>
             <td class='sinbordes'>Synopsis:</td>
@@ -67,7 +67,7 @@
             <td class='sinbordes'>SubGenero:</td>
             <td class='sinbordes'>
                 <select name="subgenero_id" >
-                    <option value="">Seleccione un género</option>
+                    <option value="">Seleccione un subgénero</option>
                     @foreach($generos as $subgenero)
                         <option value="{{ $subgenero->id }}" {{ (isset($libros) && $libros->subgenero_id == $subgenero->id) ? 'selected' : '' }}>
                             {{ $subgenero->genero }}
@@ -76,6 +76,7 @@
                 </select>
             </td>
      </tr>
+    
         <tr>
             <td class='sinbordes'><a href="{{ route('librosIndex') }}">Volver al listado</a></td>
             <td class='sinbordes'><input type="submit"></td>

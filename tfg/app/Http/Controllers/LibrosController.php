@@ -131,6 +131,13 @@ $elementos2 = Libro::where('escritor_id', $escritorId)->get();
         $p->genero_id = $r->genero_id;
         $p->escritor_id = $r->escritor_id;
         $p->subgenero_id =$r->subgenero_id;
+        if ($request->hasFile('imagenes')) {
+            $file = $request->file('imagenes');
+            $destinationPath = url('images/libros'); // carpeta específica
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $file->move($destinationPath, $fileName);
+            $libro->imagen = $destinationPath . '/' . $fileName;
+        }
         $p->save();
         return redirect()->route('librosIndex');
     }
@@ -139,11 +146,15 @@ $elementos2 = Libro::where('escritor_id', $escritorId)->get();
         $p->nombre = $r->nombre;
         $p->fecha_salida = $r->fecha_salida;
         $p->paginas = $r->paginas;
-        $p->imagen = $r->imagen;
+        $imageName = time().'.'.$r->image;
+        $r->image->move(public_path('images/libros/'), $imageName);
+        $p->imagen = $r->imageName;
         $p->synopsis = $r->synopsis;
         $p->genero_id = $r->genero_id;
         $p->escritor_id = $r->escritor_id;
         $p->subgenero_id =$r->subgenero_id;
+        
+       
         $p->save();
         return redirect()->route('librosIndex');
     }
