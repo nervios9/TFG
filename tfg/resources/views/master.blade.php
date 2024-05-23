@@ -1,7 +1,7 @@
  @include('header')
 
 
- <h1 class="d-flex justify-content-center  align-items-center centered-h1">Recien salidos de la Imprenta</h1>
+ <h1 class="d-flex justify-content-center  align-items-center centered-h1" id="carrousel1">Recien salidos de la Imprenta</h1>
  <div class="container d-flex justify-content-center align-items-center centered-div">
     
  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -30,7 +30,7 @@
 
 
 
-<h1 class="d-flex justify-content-center  align-items-center centered-h1">Autor destacado: {{ Session::get('nombre') }} </h1>
+<h1 class="d-flex justify-content-center  align-items-center centered-h1" id="carrousel2">Autor destacado: {{ Session::get('nombre') }} {{ Session::get('apellidos') }}  </h1>
 <div class="container d-flex justify-content-center align-items-center centered-div">
     
     <div id="carouselExampleControls2" class="carousel slide d-flex justify-content-center  align-items-center" data-bs-ride="carousel">
@@ -58,3 +58,24 @@
    </div>
 
   
+   <script>
+    function translatePage(language) {
+        const translations = {
+            'es': {
+                'carrousel2':'Autor destacado: {{ Session::get('nombre') }} {{ Session::get('apellidos') }}',
+                'carrousel1': 'Recien salidos de la Imprenta'
+            },
+            'en': {
+                'carrousel2': 'Featured author:  {{ Session::get('nombre') }} {{ Session::get('apellidos') }}',
+                'carrousel1': 'New Releases:'
+            }
+        };
+        // Actualizar el texto en la página según el idioma seleccionado
+        Object.keys(translations[language]).forEach(key => {
+            const element = document.getElementById(key);
+            if (element) {
+                element.textContent = translations[language][key];
+            }
+        });
+    }
+</script>

@@ -9,7 +9,7 @@
         <form action="{{ route('librosUpdate', ['libros' => $libros->id]) }}" method="POST">
             @method('PATCH')
     @else
-        <form action="{{ route('librosStore') }}" method="POST" enctype="multipart/form-data">>
+        <form action="{{ route('librosStore') }}" method="POST" enctype="multipart/form-data">
     @endisset
     @csrf
     <br>
@@ -37,29 +37,36 @@
         <tr>
             
                 <td class='sinbordes'>Genero:</td>
+             
                 <td class='sinbordes'>
+                
                     <select name="genero_id" required>
-                        <option value="">Seleccione un género</option>
+                        <option value="">Seleccione un género</option> 
                         @foreach($generos as $genero)
                             <option value="{{ $genero->id }}" {{ (isset($libros) && $libros->genero_id == $genero->id) ? 'selected' : '' }}>
                                 {{ $genero->genero }}
                             </option>
                         @endforeach
                     </select>
+                </option><a href="{{ route('generoCreate') }}">Añadir nuevo Genero</a>
                 </td>
         
         </tr>
         <tr>
-            <td class='sinbordes'>Escritor:</td>
+        
+            <td class='sinbordes'>Escritor:</td> 
+        
             <td class='sinbordes'>
+            
                 <select name="escritor_id" required>
-                    <option value="">Seleccione un escritor</option>
+                    <option value="">Seleccione un escritor
                     @foreach($escritor as $escritor)
                         <option value="{{ $escritor->id }}" {{ (isset($libros) && $libros->escritor_id == $escritor->id) ? 'selected' : '' }}>
                             {{ $escritor->nombre }} {{ $escritor->apellidos }}
                         </option>
                     @endforeach
                 </select>
+            </option><a href="{{ route('escritorCreate') }}">Añadir nuevo Escritor</a>
             </td>
         </tr>
         <tr>

@@ -174,7 +174,7 @@ $elementos2 = Libro::where('escritor_id', $escritorId)->get();
             $p->escritor_id = $r->escritor_id;
             $p->subgenero_id =$r->subgenero_id;
             
-      // Borrar la imagen anterior si existe
+     
       if ($r->hasFile('imagen')) {
         $file = $r->file('imagen');
         $fileName = time() . '_' . $file->getClientOriginalName();

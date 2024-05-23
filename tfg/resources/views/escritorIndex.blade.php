@@ -3,6 +3,7 @@
 <br>
 <br>
 <br>
+<a  href="{{ url('/backend') }}">Volver atras</a><br>
 <a href="{{ route('escritorCreate') }}">Añadir nuevo Escritor</a>
 <br><br>
 <table>
