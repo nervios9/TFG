@@ -54,32 +54,23 @@
 
 </div> 
 
-<img src="{{ asset('images/menudesplegable.png') }}" alt="Icono de menú" id="icono-menu" style="position: fixed; top: 100px; right: 20px; cursor: pointer;">
-<nav id="menu-desplegable">
-    <br>
-    <br>
-    <br>
-    <br>
-    <a style="none" class="opctionsdesplegable" href="{{ url('/all') }}">Todos los libros</a><br>
-    <a style="none" class="opctionsdesplegable" href="{{ url('/recomendador') }}">Recomendador de libros</a><br>
-    <a style="none" class="opctionsdesplegable" href="{{ url('/backend') }}">Backend</a><br>
-   {{-- <a class="opctionsdesplegable" href="{{ url('/mostrarLeidos', [Auth::user()->id]) }}">Libros Leidos</a><br>--}}
+<br>
+<br>
+<br>
+<br>
+<nav class="navbar navbar-expand-lg menu-principal" style=" color:black; margin: 20px auto; max-width: 600px;">
+    <div class="container-fluid d-flex align-items-center gap-4">
+        <div class="navbar-nav list-unstyled d-flex align-items-center gap-3">
+            <a class="nav-link" href="{{ url('/') }}">Inicio</a>
+            <a class="nav-link" href="{{ url('/all') }}">Todos los libros</a>
+            <a class="nav-link" href="{{ url('/recomendador') }}">Recomendador de libros</a>
+            <a class="nav-link" href="{{ url('/backend') }}">Backend</a>
+        </div>
+    </div>
 </nav>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const iconoMenu = document.getElementById('icono-menu');
-        const menuDesplegable = document.getElementById('menu-desplegable');
-        iconoMenu.addEventListener('click', function() {
-            // Si el menú está oculto, mostrarlo; si está visible, ocultarlo
-            if (menuDesplegable.style.left === '-250px') {
-                menuDesplegable.style.left = '0';
-            } else {
-                menuDesplegable.style.left = '-250px';
-            }
-        });
-    });
-
+   
     function translatePage(language) {
         const translations = {
             'es': {
