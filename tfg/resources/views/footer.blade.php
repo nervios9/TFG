@@ -3,9 +3,9 @@
         <div class="row">
             <div class="col-md-6">
                 <h3>Contacto</h3>
-                <p>Dirección: 123 Calle Principal, Ciudad</p>
-                <p>Email: info@example.com</p>
-                <p>Teléfono: +123 456 789</p>
+                <p> C. de Jarque de Moncayo, 10, 50012 Zaragoza</p>
+                <p>Email: sergiogomez1999@hotmail.com</p>
+                <p>Teléfono: +34 976 30 08 04</p>
             </div>
             <div class="col-md-6">
                 <h3>Enlaces útiles</h3>
@@ -19,7 +19,7 @@
         <hr>
         <div class="row">
             <div class="col-md-12">
-                <p class="text-center">© {{ date('Y') }} Nombre de la empresa. Todos los derechos reservados.</p>
+                <p class="text-center">© {{ date('Y') }} Libro antes que destino. Todos los derechos reservados.</p>
             </div>
         </div>
     </div>
