@@ -49,3 +49,5 @@ if ($_REQUEST && isset($_GET['eliminar_sesion'])) {
     return Redirect::to('/');
     }
 ?> 
+
+@include('footer')

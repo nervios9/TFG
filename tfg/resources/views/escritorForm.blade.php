@@ -43,3 +43,4 @@
         </table>
     </form>
 </div>
+@include('footer')

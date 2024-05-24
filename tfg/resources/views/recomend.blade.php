@@ -1,7 +1,14 @@
 @include ('header')
-
+<style>
+    .libros{
+          /* El div ocupará el 70% del ancho del viewport */
+            height: 30vw; /* Altura de ejemplo */
+             /* Color de fondo de ejemplo */
+            margin: 0 auto; /* Centrar horizontalmente */
+    }
+</style>
 <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
-<div class="container d-flex justify-content-center align-items-center centered-div">
+<div class=" libros container d-flex justify-content-center align-items-center centered-div">
     @if ($libro)
     <td class="imagenesLibros"><a href="{{route('show',[$libro->id])}}"><img style="height: 300px"  src="{{url('images/libros/' .$libro->imagen)}}" alt="Portada Libro" onerror="this.src='{{ url('images/libros/WIP.png') }}'"></a></td>
 @else
@@ -9,5 +16,6 @@
 @endif
 </div>
 <a class="d-flex justify-content-center align-items-center centered-div" href="{{url('/recomendador')}}">Hacer otra consulta</a>
-</body>
-</html>
+
+@include('footer')
+3

@@ -113,10 +113,17 @@
                     </form>
                     <h2 id="comentarios">Comentarios</h2>
                     @foreach ($comentarios as $comentario)
-                        <div class="comentario-item">
-                            <p><b>{{ $comentario->created_at }} {{ $comentario->user->name }} </b>{{ $comentario->comentario }}</p>
-                        </div>
-                    @endforeach
+                    <div class="comentario-item">
+                        <p><b>{{ $comentario->created_at }} {{ $comentario->user->name }} </b>{{ $comentario->comentario }}</p>
+                        @if ($comentario->user_id == Auth::user()->id)
+                            <form action="{{ route('eliminarComentario', $comentario->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Eliminar</button>
+                            </form>
+                        @endif
+                    </div>
+                @endforeach
                 </div>
             </div>
         </div>
@@ -155,3 +162,4 @@
             console.error('Error al deshabilitar el botón:', error);
         });
 </script>
+@include('footer')

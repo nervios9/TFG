@@ -1,18 +1,26 @@
- @include ('header')
+@include('header')
+<style>
+  .libros{
+        /* El div ocupará el 70% del ancho del viewport */
+          height: 29vw; /* Altura de ejemplo */
+          /* Color de fondo de ejemplo */
+          margin: 0 auto; /* Centrar horizontalmente */
+  }
+</style>
+<div class=" libros container d-flex justify-content-center align-items-center centered-div">
+    <form method="GET" action="{{ route('recomend') }}" class="d-flex">
+        @csrf
+        <select name="opcion" class="form-select mr-2">
+            <option value="" selected>Selecciona un género</option>
+            @foreach($listaGeneros as $genero)
+                <option value="{{ $genero->id }}">{{ $genero->genero }}</option>
+            @endforeach
+        </select>
+        <button type="submit" class="btn btn-primary">Buscar</button>
+    </form>
+</div>
 
-   <div class="container d-flex justify-content-center align-items-center centered-div">
-<p></p>
-<p></p>
-   <form method="GET" action="{{ route('recomend') }}">
-    @csrf
-<select name="opcion">
-  
-    @foreach($listaGeneros as $genero)
-        <option value="{{ $genero->id }}">{{ $genero->genero }}</option>
-    @endforeach
-</select>
-<button type="submit">Buscar</button>
-</form>
+@include('footer')
 {{--
    <p>Select multiple</p>
 
@@ -28,8 +36,7 @@
   <option value="juvenil">Libros juveniles</option>
 </select>
 --}}
-</body>
-</html>
+
 
 
 
