@@ -80,4 +80,6 @@ Route::get('/registrar', 'UsuariosController@crearUsuarioForm');
 Route::post('/registrar', 'UsuariosController@guardarUsuario');
 Route::get('/login', 'AuthController@showLoginForm')->name('login');
 Route::post('/login', 'AuthController@login');
+
+Route::delete('eliminarComentario/{id}', 'ComentariosController@eliminarComentario')->name('eliminarComentario');
 require __DIR__.'/auth.php';
