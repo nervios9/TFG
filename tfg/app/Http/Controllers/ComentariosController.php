@@ -31,4 +31,24 @@ class ComentariosController extends Controller
         return redirect()->back()->with('error', 'No tienes permiso para eliminar este comentario.');
     }
 }
+public function update(Request $request, $id)
+{
+    $comentario = Comentarios::findOrFail($id);
+    $this->authorize('update', $comentario); // Asegúrate de que el usuario tenga permiso para actualizar el comentario
+
+    $comentario->comentario = $request->input('comentario');
+    $comentario->save();
+
+    return redirect()->back()->with('success', 'Comentario actualizado correctamente.');
+}
+
+
+
+
+
+
+
+
+
+
 }

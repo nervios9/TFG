@@ -82,4 +82,5 @@ Route::get('/login', 'AuthController@showLoginForm')->name('login');
 Route::post('/login', 'AuthController@login');
 
 Route::delete('eliminarComentario/{id}', 'ComentariosController@eliminarComentario')->name('eliminarComentario');
+Route::patch('/comentarios/{id}',  'ComentariosController@update')->name('update');
 require __DIR__.'/auth.php';

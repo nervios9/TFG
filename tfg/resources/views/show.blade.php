@@ -96,9 +96,10 @@
                     </p>
                 </div>
                 <div class="comments-wrapper">
-                    <form action="{{ route('enviarDatos') }}" method="POST" class="mb-4">
+                    <form id="commentForm" action="{{ route('enviarDatos') }}" method="POST" class="mb-4">
                         @csrf
-                        <input type="hidden" name="comment_id" id="post">
+                        <input type="hidden" name="comment_id" id="comment_id">
+                        <input type="hidden" name="_method" value="POST" id="formMethod">
                         <div class="input-row">
                             <label for="nombre" class="form-label">Usuario:</label>
                             <input class="form-control" type="text" name="nombre" id="nombre" readonly value="{{ Auth::user()->name }}" required>
@@ -121,9 +122,10 @@
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Eliminar</button>
                             </form>
+                          
                         @endif
                     </div>
-                @endforeach
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -146,20 +148,6 @@
         }
     }
 
-    // Obtener el botón por su ID
-    var boton = document.getElementById('miBoton');
 
-    // Realizar una solicitud al servidor para verificar si el botón debe ser deshabilitado
-    fetch('/deshabilitar-boton')
-        .then(response => response.json())
-        .then(data => {
-            // Deshabilitar el botón si la respuesta indica que debe ser deshabilitado
-            if (data.deshabilitar) {
-                boton.disabled = true;
-            }
-        })
-        .catch(error => {
-            console.error('Error al deshabilitar el botón:', error);
-        });
 </script>
 @include('footer')
