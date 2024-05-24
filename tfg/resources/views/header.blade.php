@@ -65,10 +65,10 @@
 <nav class="navbar navbar-expand-lg menu-principal" style=" color:black; margin: 20px auto; max-width: 600px;">
     <div class="container-fluid d-flex align-items-center gap-4">
         <div class="navbar-nav list-unstyled d-flex align-items-center gap-3">
-            <a class="nav-link" href="{{ url('/') }}">Inicio</a>
-            <a class="nav-link" href="{{ url('/all') }}">Todos los libros</a>
-            <a class="nav-link" href="{{ url('/recomendador') }}">Recomendador de libros</a>
-            <a class="nav-link" href="{{ url('/backend') }}">Backend</a>
+            <a class="nav-link" id="inicio" href="{{ url('/') }}">Inicio</a>
+            <a class="nav-link" id="all" href="{{ url('/all') }}">Todos los libros</a>
+            <a class="nav-link" id="recommend" href="{{ url('/recomendador') }}">Recomendador de libros</a>
+            <a class="nav-link"  href="{{ url('/backend') }}">Backend</a>
         </div>
     </div>
 </nav>
@@ -78,6 +78,9 @@
     function translatePage(language) {
         const translations = {
             'es': {
+                'inicio':'Inicio',
+                'all':'Todos los libros',
+                'recommend':'Recomendador de libros',              
                 'enviar':'Enviar',
                 'comentario':'Comentario',
                 'comentarios':'Comentarios',
@@ -96,6 +99,9 @@
                 'mostrarMas':'Mostrar Más'
             },
             'en': {
+                'inicio':'Home',
+                'all':'All books',
+                'recommend':'Recommendations',   
                 'enviar':'Send',
                 'comentario':'Comments',
                 'comentarios':'Comments',
