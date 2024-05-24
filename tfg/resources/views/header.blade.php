@@ -78,6 +78,7 @@
     function translatePage(language) {
         const translations = {
             'es': {
+                'consulta':'Hacer otra consulta'
                 'inicio':'Inicio',
                 'all':'Todos los libros',
                 'recommend':'Recomendador de libros',              
@@ -99,6 +100,7 @@
                 'mostrarMas':'Mostrar Más'
             },
             'en': {
+                'consulta':'Do it again'
                 'inicio':'Home',
                 'all':'All books',
                 'recommend':'Recommendations',   
