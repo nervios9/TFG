@@ -33,6 +33,18 @@
     .d-none {
         display: none;
     }
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-top: 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 4px;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
 </style>
 
 <div class="container d-flex justify-content-center mt-3 align-items-center centered-div">
@@ -46,7 +58,7 @@
                 <option value="{{ $genero->id }}">{{ $genero->genero }}</option>
             @endforeach
         </select>
-        <button type="submit" id="submit">Buscar</button>
+        <button type="submit" class="btn" id="submit">Buscar</button>
     </form>
 </div>
 

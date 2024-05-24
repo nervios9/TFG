@@ -1,9 +1,6 @@
 
 
-<div class="d-flex justify-content-end">
-    <button onclick="translatePage('es')" class="btn btn-primary mx-2">ES</button>
-    <button onclick="translatePage('en')" class="btn btn-secondary">EN</button>
-</div>
+
 
 
 <div class="d-flex justify-content-end  min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">          
