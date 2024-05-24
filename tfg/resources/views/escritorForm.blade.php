@@ -1,34 +1,45 @@
 @include('header')
 
+<style>
+    .center-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    .form-wrapper {
+        width: 100%;
+        max-width: 600px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .form-table td {
+        padding: 10px;
+    }
+</style>
 
-
-
-
+<div class="container center-container">
     @isset($escritor)
-        <br><br>
-        <form action="{{ route('escritorUpdate', ['escritor' => $escritor->id]) }}" method="POST">
+        <form action="{{ route('escritorUpdate', ['escritor' => $escritor->id]) }}" method="POST" class="form-wrapper">
             @method('PATCH')
     @else
-        <form action="{{ route('escritorStore') }}" method="POST">
+        <form action="{{ route('escritorStore') }}" method="POST" class="form-wrapper">
     @endisset
     @csrf
-    <br>
-    <table class='sinbordes'>
-        <tr>
-            <td class='sinbordes'>Nombre:</td>
-            <td class='sinbordes'><input type="text" name="nombre" value="{{ $escritor->nombre ?? ''  }}" required></td>
-        </tr>
-        <tr>
-            <td class='sinbordes'>Apellidos:</td>
-            <td class='sinbordes'><input type="text" name="apellidos" value="{{ $escritor->apellidos ?? '' }}" required></td>
-        </tr>
-        
-        <tr>
-            <td class='sinbordes'><a href="{{ route('escritorIndex') }}">Volver al listado</a></td>
-            <td class='sinbordes'><input type="submit"></td>
-        </tr>
-    </table>
-
-</form>
-
-
+        <table class="table table-borderless form-table">
+            <tr>
+                <td>Nombre:</td>
+                <td><input type="text" name="nombre" value="{{ $escritor->nombre ?? '' }}" class="form-control" required></td>
+            </tr>
+            <tr>
+                <td>Apellidos:</td>
+                <td><input type="text" name="apellidos" value="{{ $escritor->apellidos ?? '' }}" class="form-control" required></td>
+            </tr>
+            <tr>
+                <td><a href="{{ route('escritorIndex') }}" class="btn btn-secondary">Volver al listado</a></td>
+                <td><input type="submit" class="btn btn-primary" value="Crear"></td>
+            </tr>
+        </table>
+    </form>
+</div>

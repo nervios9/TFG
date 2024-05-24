@@ -1,95 +1,100 @@
 @include('header')
 
+<style>
+    .center-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    .form-wrapper {
+        width: 100%;
+        max-width: 800px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+</style>
 
-
-
-
+<div class="container center-container">
     @isset($libros)
-        <br><br>
         <form action="{{ route('librosUpdate', ['libros' => $libros->id]) }}" method="POST">
             @method('PATCH')
     @else
         <form action="{{ route('librosStore') }}" method="POST" enctype="multipart/form-data">
     @endisset
     @csrf
-    <br>
-    <table class='sinbordes'>
-        <tr>
-            <td class='sinbordes'>Nombre:</td>
-            <td class='sinbordes'><input type="text" name="nombre" value="{{ $libros->nombre ?? ''  }}" required></td>
-        </tr>
-        <tr>
-            <td class='sinbordes'>Fecha salida:</td>
-            <td class='sinbordes'><input type="text" name="fecha_salida" value="{{ $libros->fecha_salida ?? '' }}" required></td>
-        </tr>
-        <tr>
-            <td class='sinbordes'>Paginas:</td>
-            <td class='sinbordes'><input type="text" name="paginas"value="{{ $libros->paginas ?? '' }}" required></td>
-        </tr>
-        <tr>
-            <td class='sinbordes'>Imagen:</td>
-            <td class='sinbordes'><input type="file" name="imagen"  ></td>
-        </tr>
-        <tr>
-            <td class='sinbordes'>Synopsis:</td>
-            <td class='sinbordes'><input type="text" name="synopsis" value="{{ $libros->synopsis ?? '' }}" required></td>
-        </tr>
-        <tr>
-            
-                <td class='sinbordes'>Genero:</td>
-             
-                <td class='sinbordes'>
-                
-                    <select name="genero_id" required>
-                        <option value="">Seleccione un género</option> 
-                        @foreach($generos as $genero)
-                            <option value="{{ $genero->id }}" {{ (isset($libros) && $libros->genero_id == $genero->id) ? 'selected' : '' }}>
-                                {{ $genero->genero }}
-                            </option>
-                        @endforeach
-                    </select>
-                </option><a href="{{ route('generoCreate') }}">Añadir nuevo Genero</a>
-                </td>
-        
-        </tr>
-        <tr>
-        
-            <td class='sinbordes'>Escritor:</td> 
-        
-            <td class='sinbordes'>
-            
-                <select name="escritor_id" required>
-                    <option value="">Seleccione un escritor
-                    @foreach($escritor as $escritor)
-                        <option value="{{ $escritor->id }}" {{ (isset($libros) && $libros->escritor_id == $escritor->id) ? 'selected' : '' }}>
-                            {{ $escritor->nombre }} {{ $escritor->apellidos }}
-                        </option>
-                    @endforeach
-                </select>
-            </option><a href="{{ route('escritorCreate') }}">Añadir nuevo Escritor</a>
-            </td>
-        </tr>
-        <tr>
-            
-            <td class='sinbordes'>SubGenero:</td>
-            <td class='sinbordes'>
-                <select name="subgenero_id" >
-                    <option value="">Seleccione un subgénero</option>
-                    @foreach($generos as $subgenero)
-                        <option value="{{ $subgenero->id }}" {{ (isset($libros) && $libros->subgenero_id == $subgenero->id) ? 'selected' : '' }}>
-                            {{ $subgenero->genero }}
-                        </option>
-                    @endforeach
-                </select>
-            </td>
-     </tr>
-    
-        <tr>
-            <td class='sinbordes'><a href="{{ route('librosIndex') }}">Volver al listado</a></td>
-            <td class='sinbordes'><input type="submit"></td>
-        </tr>
-    </table>
 
+    <div class="row justify-content-center form-wrapper">
+        <div class="col-md-8">
+            <table class="table table-borderless">
+                <tr>
+                    <td>Nombre:</td>
+                    <td><input type="text" name="nombre" value="{{ $libros->nombre ?? '' }}" class="form-control" required></td>
+                </tr>
+                <tr>
+                    <td>Fecha salida:</td>
+                    <td><input type="text" name="fecha_salida" value="{{ $libros->fecha_salida ?? '' }}" class="form-control" required></td>
+                </tr>
+                <tr>
+                    <td>Paginas:</td>
+                    <td><input type="text" name="paginas" value="{{ $libros->paginas ?? '' }}" class="form-control" required></td>
+                </tr>
+                <tr>
+                    <td>Imagen:</td>
+                    <td><input type="file" name="imagen" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>Synopsis:</td>
+                    <td><input type="text" name="synopsis" value="{{ $libros->synopsis ?? '' }}" class="form-control" required></td>
+                </tr>
+                <tr>
+                    <td>Genero:</td>
+                    <td>
+                        <select name="genero_id" class="form-control" required>
+                            <option value="">Seleccione un género</option>
+                            @foreach($generos as $genero)
+                                <option value="{{ $genero->id }}" {{ (isset($libros) && $libros->genero_id == $genero->id) ? 'selected' : '' }}>
+                                    {{ $genero->genero }}
+                                </option>
+                            @endforeach
+                        </select>
+                        <a href="{{ route('generoCreate') }}">Añadir nuevo Genero</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Escritor:</td>
+                    <td>
+                        <select name="escritor_id" class="form-control" required>
+                            <option value="">Seleccione un escritor</option>
+                            @foreach($escritor as $escritor)
+                                <option value="{{ $escritor->id }}" {{ (isset($libros) && $libros->escritor_id == $escritor->id) ? 'selected' : '' }}>
+                                    {{ $escritor->nombre }} {{ $escritor->apellidos }}
+                                </option>
+                            @endforeach
+                        </select>
+                        <a href="{{ route('escritorCreate') }}">Añadir nuevo Escritor</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>SubGenero:</td>
+                    <td>
+                        <select name="subgenero_id" class="form-control">
+                            <option value="">Seleccione un subgénero</option>
+                            @foreach($generos as $subgenero)
+                                <option value="{{ $subgenero->id }}" {{ (isset($libros) && $libros->subgenero_id == $subgenero->id) ? 'selected' : '' }}>
+                                    {{ $subgenero->genero }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="{{ route('librosIndex') }}">Volver al listado</a></td>
+                    <td><input type="submit" class="btn btn-primary"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
 </form>
-
-
+</div>

@@ -1,8 +1,41 @@
 @include ('header')
 
 <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
+
+<style>
+    .centered-div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .container-centered {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    table {
+        width: 60%;
+        text-align: center;
+        border-collapse: collapse; /* Colapsar los bordes de las celdas */
+    }
+    td {
+        padding: 0; /* Eliminar el padding para que no haya espaciado alrededor */
+    }
+    .imagenesLibros img {
+        display: block;
+        margin: 0 auto;
+    }
+    .imagenesLibros {
+        padding: 10px; /* Espaciado horizontal entre las celdas */
+        
+    }
+    .d-none {
+        display: none;
+    }
+</style>
+
 <div class="container d-flex justify-content-center mt-3 align-items-center centered-div">
-   
     <h1 id="catalogo">Catalogo de Libros</h1>
     <form method="GET" action="{{ route('buscador') }}">
         @csrf
@@ -16,21 +49,23 @@
         <button type="submit" id="submit">Buscar</button>
     </form>
 </div>
-<div class="container">
+
+<div class="container-centered">
     <table id="catalogoLibros">
         @foreach($listaLibros->chunk(5) as $filaIndex => $fila)
             <tr class="filaLibros {{ $filaIndex >= 2 ? 'd-none' : '' }}">
-              
-        @foreach($fila as $libros)
-            
-             <td class="imagenesLibros"><a href="{{route('show',[$libros->id])}}"><img style="height: 300px" src="{{url('images/libros/' .$libros->imagen)}}"  onerror="this.src='{{ url('images/libros/WIP.png') }}'"  ></a></td>
-             
-        @endforeach
+                @foreach($fila as $libros)
+                    <td class="imagenesLibros">
+                        <a href="{{ route('show', [$libros->id]) }}">
+                            <img style="height: 300px width:auto"  src="{{ url('images/libros/' . $libros->imagen) }}" onerror="this.src='{{ url('images/libros/WIP.png') }}'">
+                        </a>
+                    </td>
+                @endforeach
             </tr>
         @endforeach
     </table>
     <div class="d-flex justify-content-center mt-3">
-      <button id="mostrarMas" class="btn btn-primary {{ $listaLibros->count() > 10 ? '' : 'd-none' }}">Mostrar más</button>
+        <button id="mostrarMas" class="btn btn-primary {{ $listaLibros->count() > 10 ? '' : 'd-none' }}">Mostrar más</button>
     </div>
 </div>
 
@@ -54,10 +89,3 @@
         });
     });
 </script>
-
-<style>
-    .d-none {
-        display: none;
-    }
-</style>
-

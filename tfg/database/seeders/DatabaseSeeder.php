@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call(GenerosTableSeeder::class);
         $this->call(UsuariosTableSeeder::class);
         $this->call(LibrosTableSeeder::class);
-        $this->call(RolesSeeder::class);
+        //$this->call(RolesSeeder::class);
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([
