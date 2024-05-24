@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,47 +10,37 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" >
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" ></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
-       <title>@yield('title')</title>
-  
+    <title>@yield('title')</title>
 </head>
-  <style>
-    
-        #titulo {
-            position: absolute;
-            top: 6%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            margin: 0;
-            margin-top: 30px;
-            padding: 20px;
-            border-radius: 8px;
-        }
-       
-
-        .botones {
-            display: fixed;
-            
-            margin-top: -30px;
-            margin-left: 700px;
-        }
-        .boton {
-            margin-left: 10px;
-        }
-        #icono-menu {
-        display: fixed;
-        top: 20px;
-        right: 20px;
-       
-        cursor: pointer;
+<style>
+    #titulo {
+        position: absolute;
+        top: 6%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        margin: 0;
+        margin-top: 30px;
+        padding: 20px;
+        border-radius: 8px;
     }
-    </style>
+
+    .botones {
+        display: fixed;
+        margin-top: -30px;
+        margin-left: 700px;
+    }
+
+    .boton {
+        margin-left: 10px;
+    }
+</style>
 <script src="/bootstrap-4.0.0-dist/js/bootstrap.js"></script>
 <header class="header w-100 d-flex flex-column flex-md-row justify-content-between align-items-center fixed-top">
     <a href="{{ url('/') }}">
         <img src="{{ asset('images/Logo.png') }}" alt="Logo" class="logo"></img>
     </a>
-    
+
     <div id="contenedor">
         <h1 id="titulo">Libro antes que destino</h1>
         <div class="botones">
@@ -60,22 +48,18 @@
             <button onclick="translatePage('en')" class="btn btn-secondary boton">EN</button>
         </div>
     </div>
-    
+
     @include('userMenu')
 </header>
 
 </div> 
 
-
 <img src="{{ asset('images/menudesplegable.png') }}" alt="Icono de menú" id="icono-menu" style="position: fixed; top: 100px; right: 20px; cursor: pointer;">
 <nav id="menu-desplegable">
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+    <br>
+    <br>
+    <br>
+    <br>
     <a style="none" class="opctionsdesplegable" href="{{ url('/all') }}">Todos los libros</a><br>
     <a style="none" class="opctionsdesplegable" href="{{ url('/recomendador') }}">Recomendador de libros</a><br>
     <a style="none" class="opctionsdesplegable" href="{{ url('/backend') }}">Backend</a><br>
@@ -95,9 +79,7 @@
             }
         });
     });
-</script>
 
-<script>
     function translatePage(language) {
         const translations = {
             'es': {
@@ -133,7 +115,8 @@
                 'carrousel1': 'New Releases:',
                 'catalogo': 'All Books',
                 'submit': 'Submit',
-                'mostrarMas':'Show more'            }
+                'mostrarMas':'Show more'
+            }
         };
         // Actualizar el texto en la página según el idioma seleccionado
         Object.keys(translations[language]).forEach(key => {
@@ -142,7 +125,6 @@
                 element.textContent = translations[language][key];
             }
         });
+        return false; // Evita que la página se desplace al hacer clic en el botón
     }
 </script>
-
-
