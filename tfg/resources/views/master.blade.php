@@ -1,9 +1,5 @@
  @include('header')
 
- <br>
- <br>
- <br>
- <br>
  
  
  <h1 class="d-flex justify-content-center  align-items-center centered-h1" id="carrousel1">Recien salidos de la Imprenta</h1>
