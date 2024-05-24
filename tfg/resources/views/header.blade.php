@@ -39,6 +39,13 @@
         .boton {
             margin-left: 10px;
         }
+        #icono-menu {
+        display: fixed;
+        top: 20px;
+        right: 20px;
+       
+        cursor: pointer;
+    }
     </style>
 <script src="/bootstrap-4.0.0-dist/js/bootstrap.js"></script>
 <header class="header w-100 d-flex flex-column flex-md-row justify-content-between align-items-center fixed-top">
@@ -60,14 +67,21 @@
 </div> 
 
 
-<img src="{{ asset('images/menudesplegable.png') }}" alt="Icono de menú" id="icono-menu">
+<img src="{{ asset('images/menudesplegable.png') }}" alt="Icono de menú" id="icono-menu" style="position: fixed; top: 100px; right: 20px; cursor: pointer;">
 <nav id="menu-desplegable">
 
-    <a  class="opctionsdesplegable" href="{{ url('/all') }}">Todos los libros</a><br>
-    <a  class="opctionsdesplegable" href="{{ url('/recomendador') }}">Recomendador de libros</a><br>
-    <a  class="opctionsdesplegable" href="{{ url('/backend') }}">Backend</a><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+    <a style="none" class="opctionsdesplegable" href="{{ url('/all') }}">Todos los libros</a><br>
+    <a style="none" class="opctionsdesplegable" href="{{ url('/recomendador') }}">Recomendador de libros</a><br>
+    <a style="none" class="opctionsdesplegable" href="{{ url('/backend') }}">Backend</a><br>
    {{-- <a class="opctionsdesplegable" href="{{ url('/mostrarLeidos', [Auth::user()->id]) }}">Libros Leidos</a><br>--}}
 </nav>
+
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const iconoMenu = document.getElementById('icono-menu');
@@ -130,3 +144,5 @@
         });
     }
 </script>
+
+
