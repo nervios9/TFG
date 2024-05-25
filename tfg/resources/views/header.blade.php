@@ -10,6 +10,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" >
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" ></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <link href="{{ asset('css/estilos.css') }}" rel="stylesheet">
+    <link href="{{ asset('bootstrap-4.0.0-dist/css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- Solo usa una versión de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Incluye scripts de Bootstrap y dependencias -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
     <title>@yield('title')</title>
 </head>
 <style>
@@ -36,7 +46,7 @@
     }
 </style>
 <script src="/bootstrap-4.0.0-dist/js/bootstrap.js"></script>
-<header class="header w-100 d-flex flex-column flex-md-row justify-content-between align-items-center fixed-top">
+<header class="header2 w-100 d-flex flex-column flex-md-row justify-content-between align-items-center fixed-top">
     <a href="{{ url('/') }}">
         <img src="{{ asset('images/Logo.png') }}" alt="Logo" class="logo"></img>
     </a>
@@ -68,7 +78,9 @@
             <a class="nav-link" id="inicio" href="{{ url('/') }}">Inicio</a>
             <a class="nav-link" id="all" href="{{ url('/all') }}">Todos los libros</a>
             <a class="nav-link" id="recommend" href="{{ url('/recomendador') }}">Recomendador de libros</a>
-            <a class="nav-link"  href="{{ url('/backend') }}">Backend</a>
+         @role('admin')
+             <a class="nav-link"  href="{{ url('/backend') }}">Backend</a>
+         @endrole
         </div>
     </div>
 </nav>
@@ -78,7 +90,7 @@
     function translatePage(language) {
         const translations = {
             'es': {
-                'consulta':'Hacer otra consulta'
+                'consulta':'Hacer otra consulta',
                 'inicio':'Inicio',
                 'all':'Todos los libros',
                 'recommend':'Recomendador de libros',              
@@ -100,7 +112,7 @@
                 'mostrarMas':'Mostrar Más'
             },
             'en': {
-                'consulta':'Do it again'
+                'consulta':'Do it again',
                 'inicio':'Home',
                 'all':'All books',
                 'recommend':'Recommendations',   
