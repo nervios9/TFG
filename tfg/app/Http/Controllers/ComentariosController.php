@@ -20,17 +20,18 @@ class ComentariosController extends Controller
         return redirect()->back()->with('perfecto', 'Comentario agregado');
  }
  public function eliminarComentario($id)
-{
-    $comentario = Comentarios::findOrFail($id);
-
-    // Verificar si el usuario autenticado tiene permiso para eliminar el comentario
-    if ($comentario->user_id == auth()->user()->id) {
-        $comentario->delete();
-        return redirect()->back()->with('success', 'Comentario eliminado correctamente.');
-    } else {
-        return redirect()->back()->with('error', 'No tienes permiso para eliminar este comentario.');
-    }
-}
+ {
+     $comentario = Comentarios::findOrFail($id);
+     $user = auth()->user();
+ 
+     // Verificar si el usuario autenticado tiene permiso para eliminar el comentario
+     if ($comentario->user_id == $user->id || $user->hasRole('admin') || $user->hasRole('bibliotecario')) {
+         $comentario->delete();
+         return redirect()->back()->with('success', 'Comentario eliminado correctamente.');
+     } else {
+         return redirect()->back()->with('error', 'No tienes permiso para eliminar este comentario.');
+     }
+ }
 public function update(Request $request, $id)
 {
     $comentario = Comentarios::findOrFail($id);

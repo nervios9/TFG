@@ -60,6 +60,7 @@
         text-align: left;
         border-bottom: 1px solid #ddd;
         padding: 10px 0;
+        font-family: 'Times New Roman', Times, serif;
     }
 </style>
 
@@ -116,13 +117,12 @@
                     @foreach ($comentarios as $comentario)
                     <div class="comentario-item">
                         <p><b>{{ $comentario->created_at }} {{ $comentario->user->name }} </b>{{ $comentario->comentario }}</p>
-                        @if ($comentario->user_id == Auth::user()->id)
+                        @if ($comentario->user_id == Auth::user()->id || Auth::user()->hasRole('admin') || Auth::user()->hasRole('bibliotecario'))
                             <form action="{{ route('eliminarComentario', $comentario->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Eliminar</button>
                             </form>
-                          
                         @endif
                     </div>
                     @endforeach
@@ -147,7 +147,5 @@
             toggleLink.innerHTML = "... Leer más";
         }
     }
-
-
 </script>
 @include('footer')
