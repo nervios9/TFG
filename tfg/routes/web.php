@@ -3,6 +3,7 @@ use App\Http\Controllers\LibrosController;
 use App\Http\Controllers\LibrosLeidosController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -83,4 +84,22 @@ Route::post('/login', 'AuthController@login');
 
 Route::delete('eliminarComentario/{id}', 'ComentariosController@eliminarComentario')->name('eliminarComentario');
 Route::patch('/comentarios/{id}',  'ComentariosController@update')->name('update');
+
+
+Route::get('userIndex', 'UserController@indexUser')->name('userIndex');
+Route::delete('/userDestroy{usuario}', 'UserController@userDestroy')->name('userDestroy');
+Route::get('userCreate', 'UserController@userCreate')->name('userCreate');
+Route::post('userStore', 'UserController@userStore')->name('userStore');
+Route::patch('userUpdate/{usuario}', 'UserController@userUpdate')->name('userUpdate');
+Route::get('/userEdit{id}', 'UserController@userEdit')->name('userEdit');
+
+
+
+Route::get('biblioIndex', 'UserController@indexBiblio')->name('biblioIndex');
+Route::delete('/biblioDestroy{bibliotecario}', 'UserController@biblioDestroy')->name('biblioDestroy');
+Route::get('biblioCreate', 'UserController@biblioCreate')->name('biblioCreate');
+Route::post('biblioStore', 'UserController@biblioStore')->name('biblioStore');
+Route::patch('biblioUpdate/{bibliotecario}', 'UserController@biblioUpdate')->name('biblioUpdate');
+Route::get('/biblioEdit{id}', 'UserController@biblioEdit')->name('biblioEdit');
+
 require __DIR__.'/auth.php';

@@ -47,4 +47,5 @@ class User extends Authenticatable
     public function comentarios() {
         return $this->hasMany('App\Models\Comentarios');
     }
+   
 }

@@ -78,9 +78,9 @@
             <a class="nav-link" id="inicio" href="{{ url('/') }}">Inicio</a>
             <a class="nav-link" id="all" href="{{ url('/all') }}">Todos los libros</a>
             <a class="nav-link" id="recommend" href="{{ url('/recomendador') }}">Recomendador de libros</a>
-         @role('admin')
-             <a class="nav-link"  href="{{ url('/backend') }}">Backend</a>
-         @endrole
+            @hasanyrole('admin|bibliotecario')
+            <a class="nav-link" href="{{ url('/backend') }}">Gestor de Inventario</a>
+        @endhasanyrole
         </div>
     </div>
 </nav>

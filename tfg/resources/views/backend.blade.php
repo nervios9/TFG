@@ -19,6 +19,14 @@
     @csrf
     <input type="submit" value="Generos" class="grande">
 </form>
-
-
+@role('admin')
+<form action = "{{route('userIndex')}}" method="GET" class="centrado">
+    @csrf
+    <input type="submit" value="Usuarios" class="grande">
+</form>
+<form action = "{{route('biblioIndex')}}" method="GET" class="centrado">
+    @csrf
+    <input type="submit" value="Bibliotecarios" class="grande">
+</form>
+@endrole
 @include('footer')
