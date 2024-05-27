@@ -1,3 +1,4 @@
+<body class="fondo">
 @include('header')
 <style>
   .libros{
@@ -21,6 +22,7 @@
 </div>
 
 @include('footer')
+</body>
 {{--
    <p>Select multiple</p>
 
