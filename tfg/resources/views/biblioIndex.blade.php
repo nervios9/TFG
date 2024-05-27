@@ -56,7 +56,7 @@
                             <form action="{{ route('biblioDestroy', $bibliotecario->id) }}" method="POST">
                                 @csrf
                                 @method("DELETE")
-                                <input type="submit" value="Eliminar" class="btn btn-danger">
+                                <input type="submit" value="Eliminar" class="btn btn-danger" style="background-color: #A379E8">
                             </form>
                         </td>
                     </tr>

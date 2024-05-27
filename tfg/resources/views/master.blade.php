@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
+ <body class="fondo">
  @include('header')
 
  
@@ -60,3 +62,4 @@
 
   
    @include('footer')
+</body>

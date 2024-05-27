@@ -1,6 +1,11 @@
 body{
     margin: 0;
     padding: 0;
+    background-color: #E8A879;
+}
+.fondo{
+
+    background-color: #E8A879;
 }
 .logo{
     height: 100px;
@@ -8,8 +13,14 @@ body{
    
 }
 .header2{
-    background-color: darksalmon;
+
     height: 100px;
+}
+.header2-admin {
+    background-color: gray; /* Color para admin */
+}
+.header2-default {
+    background-color: darksalmon; /* Color para otros usuarios */
 }
 .header{
     display: flex;
@@ -138,4 +149,13 @@ input.grande{
     padding: 20px;
     width: 50%;
     font-size: x-large;
+}
+footer *{
+    background-color: #E8BB79;
+}
+input{
+    background-color: lightgray;
+}
+.btnBorrar{
+    background-color:#A379E8;
 }

@@ -112,6 +112,11 @@ class UserController extends Controller
 
      return view('userForm', compact('user'));
     }
+    public function header()
+    {
+        $user = Auth::user();
+        return view('header', compact('user'));
+    }
 
 
 

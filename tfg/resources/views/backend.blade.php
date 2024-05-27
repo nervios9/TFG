@@ -1,3 +1,4 @@
+<body class="fondo">
 @include('header')
 <br>
 <br>
@@ -12,7 +13,7 @@
 
 <form action = "{{route('escritorIndex')}}" method="GET" class="centrado">
     @csrf
-    <input type="submit" value="Escritores" class="grande">
+    <input type="su#E8799Fbmit" value="Escritores" class="grande">
 </form>
 
 <form action = "{{route('generoIndex')}}" method="GET" class="centrado">
@@ -30,3 +31,4 @@
 </form>
 @endrole
 @include('footer')
+</body>

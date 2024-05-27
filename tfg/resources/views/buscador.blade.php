@@ -1,19 +1,15 @@
+<body class="fondo">
 @include('header')
 
-<link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
+
 
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f9f9f9;
-        margin: 0;
-        padding: 0;
-    }
+   
     .container {
-        max-width: 800px;
-        margin: 20px auto;
+      
+        
         padding: 20px;
-        background-color: #fff;
+        
         border-radius: 8px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
@@ -122,3 +118,4 @@
     });
 </script>
 @include('footer')
+</body>
