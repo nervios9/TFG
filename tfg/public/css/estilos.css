@@ -150,8 +150,12 @@ input.grande{
     width: 50%;
     font-size: x-large;
 }
+
 footer *{
     background-color: #E8BB79;
+}
+footer {
+    width: 100%;
 }
 input{
     background-color: lightgray;

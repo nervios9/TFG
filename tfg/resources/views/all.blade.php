@@ -58,7 +58,7 @@
                 <option value="{{ $genero->id }}">{{ $genero->genero }}</option>
             @endforeach
         </select>
-        <button type="submit" style="background-color: #A379E8" class="btn btnBorrar" id="submit">Buscar</button>
+        <button type="submit" style="background-color: #D95D39" class="btn btnBorrar" id="submit">Buscar</button>
     </form>
 </div>
 
@@ -77,7 +77,7 @@
         @endforeach
     </table>
     <div class="d-flex justify-content-center mt-3">
-        <button id="mostrarMas" class="btn btn-primary {{ $listaLibros->count() > 10 ? '' : 'd-none' }}">Mostrar más</button>
+        <button id="mostrarMas" style="background-color: #D95D39" class="btn btn-primary {{ $listaLibros->count() > 10 ? '' : 'd-none' }}">Mostrar más</button>
     </div>
 </div>
 
