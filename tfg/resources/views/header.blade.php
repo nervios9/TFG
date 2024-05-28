@@ -60,8 +60,8 @@
     <div id="contenedor">
         <h1 id="titulo">Libro antes que destino</h1>
         <div class="botones">
-            <button onclick="translatePage('es')" class="btn btn-primary boton">ES</button>
-            <button onclick="translatePage('en')" class="btn btn-secondary boton">EN</button>
+            <button onclick="translatePage('es')" style="background-color:#E76F51" class="btn btn-primary boton">ES</button>
+            <button onclick="translatePage('en')" style="background-color:#264653" class="btn btn-secondary boton">EN</button>
         </div>
     </div>
     <div id="userZone" style="width: 200px;"> <!-- Establece un ancho fijo para evitar cambios en el tamaño -->
