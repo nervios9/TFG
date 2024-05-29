@@ -1,11 +1,11 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: #E8A879;
+    background-color:rgb(227, 186, 125);
 }
 .fondo{
 
-    background-color: #E8A879;
+    background-color:rgb(227, 186, 125);
 }
 .logo{
     height: 100px;
@@ -144,6 +144,9 @@ padding-top: 10px;
 .centrado{
     text-align: center;
 }
+.centrado2{
+    text-align: center;
+}
 input.grande{
     margin: 10px;
     padding: 20px;
@@ -153,11 +156,11 @@ input.grande{
 
 footer {
     width: 100%;
-    background-color: #E8BB79;
+    background-color: rgb(186, 131, 75);
 }
 footer *{
 
-    background-color: #E8BB79;
+    background-color:  rgb(186, 131, 75);
 }
 footer {
     width: 100%;

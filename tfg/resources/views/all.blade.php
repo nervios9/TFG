@@ -33,7 +33,7 @@
     .d-none {
         display: none;
     }
-    .btn {
+    .btn1 {
         display: inline-block;
         padding: 10px 20px;
         margin-top: 20px;
@@ -47,7 +47,7 @@
     }
 </style>
 
-<div class="container d-flex justify-content-center mt-3 align-items-center centered-div">
+<div class=" {{ $user->hasRole('admin') ? 'body-admin' : 'body-default' }} container d-flex justify-content-center mt-3 align-items-center centered-div">
     <h1 id="catalogo">Catalogo de Libros</h1>
     <form method="GET" action="{{ route('buscador') }}">
         @csrf
@@ -58,7 +58,7 @@
                 <option value="{{ $genero->id }}">{{ $genero->genero }}</option>
             @endforeach
         </select>
-        <button type="submit" style="background-color: #D95D39" class="btn btnBorrar" id="submit">Buscar</button>
+        <button type="submit" style="background-color: #D95D39" class="btn1 btnBorrar" id="submit">Buscar</button>
     </form>
 </div>
 
@@ -77,7 +77,7 @@
         @endforeach
     </table>
     <div class="d-flex justify-content-center mt-3">
-        <button id="mostrarMas" style="background-color: #D95D39" class="btn btn-primary {{ $listaLibros->count() > 10 ? '' : 'd-none' }}">Mostrar más</button>
+        <button id="mostrarMas" style="background-color: #D95D39" class="btn1 btn-primary {{ $listaLibros->count() > 10 ? '' : 'd-none' }}">Mostrar más</button>
     </div>
 </div>
 

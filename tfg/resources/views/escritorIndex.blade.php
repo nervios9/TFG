@@ -1,3 +1,4 @@
+<body class="fondo">
 @include('header')
 
 <style>
@@ -27,7 +28,7 @@
     }
     .table th {
         text-align: center;
-        background-color: #f8f9fa; /* Cambia este color según tu preferencia */
+        background-color: rgb(186, 131, 75); 
         color: #343a40; /* Color del texto de la cabecera */
     }
 </style>
@@ -43,8 +44,6 @@
                 <tr>
                     <th class='border-1px'>Nombre</th>
                     <th class='border-1px'>Apellidos</th>
-                    <th class='sinbordes'></th>
-                    <th class='sinbordes'></th>
                 </tr>
             </thead>
             <tbody>
@@ -52,10 +51,8 @@
                     <tr>
                         <td class='border-1px'>{{$escritor->nombre}}</td>
                         <td class='border-1px'>{{$escritor->apellidos}}</td>
-                        <td class='sinbordes action-cell'>
+                        <td class='sinbordes'>
                             <a href="{{route('escritorEdit', $escritor->id)}}" class="btn btn-warning">Modificar</a>
-                        </td>
-                        <td class='sinbordes action-cell'>
                             <form action="{{route('escritorDestroy', $escritor->id)}}" method="POST">
                                 @csrf
                                 @method("DELETE")

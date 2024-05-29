@@ -56,7 +56,7 @@ class UserController extends Controller
         $bibliotecario = User::findOrFail($id);
 
         if (!$bibliotecario->hasRole('bibliotecario')) {
-            return redirect()->route('admin.bibliotecarios.index')->with('error', 'Usuario no tiene rol de bibliotecario.');
+            return redirect()->route('abiblioForm')->with('error', 'Usuario no tiene rol de bibliotecario.');
         }
 
         return view('biblioForm', compact('bibliotecario'));
@@ -112,11 +112,7 @@ class UserController extends Controller
 
      return view('userForm', compact('user'));
     }
-    public function header()
-    {
-        $user = Auth::user();
-        return view('header', compact('user'));
-    }
+ 
 
 
 

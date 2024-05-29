@@ -13,7 +13,7 @@
 
 <form action = "{{route('escritorIndex')}}" method="GET" class="centrado">
     @csrf
-    <input type="su#E8799Fbmit" value="Escritores" class="grande">
+    <input type="submit" value="Escritores" class="grande">
 </form>
 
 <form action = "{{route('generoIndex')}}" method="GET" class="centrado">

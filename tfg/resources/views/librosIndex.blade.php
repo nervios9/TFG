@@ -1,3 +1,4 @@
+<body class="fondo">
 @include('header')
 
 <style>
@@ -27,9 +28,10 @@
     }
     .table th {
         text-align: center;
-        background-color: #f8f9fa; /* Cambia este color según tu preferencia */
+        background-color: rgb(186, 131, 75);
         color: #343a40; /* Color del texto de la cabecera */
     }
+ 
 </style>
 
 <div class="container center-container">
@@ -48,8 +50,7 @@
                     <th class='border-1px'>Synopsis</th>
                     <th class='border-1px'>Genero</th>
                     <th class='border-1px'>Escritor</th>
-                    <th class='sinbordes'></th>
-                    <th class='sinbordes'></th>
+                  
                 </tr>
             </thead>
             <tbody>
@@ -72,14 +73,13 @@
                         <td class='border-1px'>{{ $libros->escritor->nombre }} {{ $libros->escritor->apellidos }}</td>
                         <td class='sinbordes action-cell'>
                             <a href="{{route('librosEdit', $libros->id)}}" class="btn btn-warning">Modificar</a>
-                        </td>
-                        <td class='sinbordes action-cell'>
                             <form action="{{route('librosDestroy', $libros->id)}}" method="POST">
                                 @csrf
                                 @method("DELETE")
                                 <input type="submit" value="Borrar" class="btn btn-danger">
                             </form>
                         </td>
+                      
                     </tr>
                 @endforeach
             </tbody>
@@ -102,3 +102,4 @@
     }
 </script>
 @include('footer')
+</body>

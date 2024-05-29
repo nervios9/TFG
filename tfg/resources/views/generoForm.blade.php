@@ -1,3 +1,4 @@
+<body class="fondo">
 @include('header')
 
 <style>

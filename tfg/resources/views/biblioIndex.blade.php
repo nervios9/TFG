@@ -1,4 +1,5 @@
-º@include('header')
+<body class="fondo body-admin">
+@include('header')
 
 <style>
     .center-container {
@@ -17,18 +18,20 @@
     .border-1px {
         border: 1px solid black;
     }
-    .sinbordes {
-        border: none;
-    }
+  
     .action-cell {
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .table th {
+    .table th,tr {
         text-align: center;
-        background-color: #f8f9fa;
-        color: #343a40;
+        
+       border-color: black;
+        color: black;
+    }
+    .table th {
+      background-color: rgb(186, 131, 75); 
     }
 </style>
 
@@ -51,12 +54,12 @@
                     <tr>
                         <td class='border-1px'>{{ $bibliotecario->name }}</td>
                         <td class='border-1px'>{{ $bibliotecario->email }}</td>
-                        <td class='border-1px action-cell'>
+                        <td class='border-1px'>
                             <a href="{{route('biblioEdit', $bibliotecario->id)}}" class="btn btn-warning">Modificar</a>
                             <form action="{{ route('biblioDestroy', $bibliotecario->id) }}" method="POST">
                                 @csrf
                                 @method("DELETE")
-                                <input type="submit" value="Eliminar" class="btn btn-danger" style="background-color: #A379E8">
+                                <input type="submit" value="Eliminar" class="btn btn-danger">
                             </form>
                         </td>
                     </tr>
@@ -67,3 +70,4 @@
 </div>
 
 @include('footer')
+</body>

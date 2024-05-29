@@ -1,3 +1,4 @@
+<body class="fondo">
 @include('header')
 
 <style>
@@ -25,6 +26,9 @@
         margin-top: 20px;
         margin-bottom: 20px;
     }
+    .table th {
+      background-color: rgb(186, 131, 75); 
+    }
 </style>
 
 <div class="container center-container">
@@ -37,15 +41,15 @@
             <thead>
                 <tr>
                     <th>Géneros</th>
-                    <th class="no-border"></th>
-                    <th class="no-border"></th>
+                   
+                    
                 </tr>
             </thead>
             <tbody>
                 @foreach ($listaGeneros as $generos)
                 <tr>
                     <td>{{$generos->genero}}</td>
-                    <td colspan="2" class="no-border">
+                    <td class="no-border">
                         <div class="action-buttons">
                             <a href="{{route('generoEdit', $generos->id)}}" class="btn btn-warning">Modificar</a>
                             <form action="{{route('generoDestroy', $generos->id)}}" method="POST">
@@ -62,3 +66,4 @@
     </div>
 </div>
 @include('footer')
+</body>

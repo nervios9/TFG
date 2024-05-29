@@ -1,4 +1,5 @@
-<body class="fondo">
+
+<body class="{{ $user->hasRole('admin') ? 'body-admin' : 'body-default' }} fondo">
 @include('header')
 
 
@@ -15,7 +16,7 @@
     }
     h1 {
         text-align: center;
-        color: #333;
+     
     }
     .centered-div {
         display: flex;
@@ -48,7 +49,7 @@
     .d-none {
         display: none;
     }
-    .btn {
+    .btn1 {
         display: inline-block;
         padding: 10px 20px;
         margin-top: 20px;
@@ -93,7 +94,7 @@
         @endif
     </table>
     <div class="d-flex justify-content-center mt-3">
-        <button id="mostrarMas" class="btn btn-primary {{ $listaLibros->count() > 10 ? '' : 'd-none' }}">Mostrar más</button>
+        <button id="mostrarMas" style="background-color: #D95D39" class="btn1 btn-primary {{ $listaLibros->count() > 10 ? '' : 'd-none' }}">Mostrar más</button>
     </div>
 </div>
 

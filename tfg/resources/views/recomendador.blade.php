@@ -17,7 +17,7 @@
                 <option value="{{ $genero->id }}">{{ $genero->genero }}</option>
             @endforeach
         </select>
-        <button type="submit" id="submit"  class="btn btn-primary">Buscar</button>
+        <button type="submit" style="background-color: #D95D39" id="submit"  class="btn btn-primary">Buscar</button>
     </form>
 </div>
 

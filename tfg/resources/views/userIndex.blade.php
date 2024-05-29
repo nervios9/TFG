@@ -1,4 +1,5 @@
-º@include('header')
+<body class="fondo">
+@include('header')
 
 <style>
     .center-container {
@@ -27,7 +28,7 @@
     }
     .table th {
         text-align: center;
-        background-color: #f8f9fa;
+        background-color: rgb(186, 131, 75);
         color: #343a40;
     }
 </style>
@@ -67,3 +68,4 @@
 </div>
 
 @include('footer')
+</body>

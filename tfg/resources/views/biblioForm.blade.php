@@ -1,3 +1,4 @@
+<body class="fondo">
 @include('header')
 
 <style>
@@ -49,3 +50,4 @@
     </form>
 </div>
 @include('footer')
+</body>

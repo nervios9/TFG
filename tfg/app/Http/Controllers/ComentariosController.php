@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Comentarios;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use App\Models\User;
 class ComentariosController extends Controller
 {
     public function recibirDatos(Request $request){

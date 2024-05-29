@@ -1,7 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Dropdown de Categorías</title>
+
+<body class="{{ $user->hasRole('admin') ? 'body-admin' : 'body-default' }} fondo">
 
     @include('header')
     <style>
@@ -18,7 +16,7 @@
             padding: 10px; /* Espaciado horizontal entre las celdas */
         }
     </style>
-</head>
+
 <body class="fondo">
     <div class="container mt-5">
         <!-- Utiliza d-flex y justify-content-end para mover el dropdown a la derecha -->

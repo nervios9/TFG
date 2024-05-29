@@ -24,11 +24,18 @@
 </head>
 <style>
     .header-admin {
-        background-color: gray; /* Color para admin */
+        background-color: #003366; /* Color para admin */
+        color: white;
     }
     .header-default {
         background-color: darksalmon; /* Color para otros usuarios */
     }
+    .header-biblio {
+        background-color: rgb(52, 159, 52); /* Color para rol bibliotecario */
+    }
+  
+  
+ 
     #titulo {
         position: absolute;
         top: 6%;
@@ -50,10 +57,17 @@
     .boton {
         margin-left: 10px;
     }
+    .no-underline {
+    text-decoration: none;
+    color: inherit; 
+}
+.no-underline:hover {
+    text-decoration: none;
+    color: inherit; 
+}
 </style>
 <script src="/bootstrap-4.0.0-dist/js/bootstrap.js"></script>
-<header class=" {{ $user->hasRole('admin') ? 'header-admin' : 'header-default' }} w-100 d-flex flex-column flex-md-row justify-content-between align-items-center fixed-top">
-    <a href="{{ url('/') }}">
+<header class="{{ $user->hasRole('admin') ? 'header-admin' : ($user->hasRole('bibliotecario') ? 'header-biblio' : 'header-default') }} w-100 d-flex flex-column flex-md-row justify-content-between align-items-center fixed-top">    <a href="{{ url('/') }}">
         <img src="{{ asset('images/Logo.png') }}" alt="Logo" class="logo"></img>
     </a>
 
@@ -67,8 +81,7 @@
     <div id="userZone" style="width: 200px;"> <!-- Establece un ancho fijo para evitar cambios en el tamaño -->
         <div class="d-flex justify-content-end min-h-screen bg-dots-darker bg-center  dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">          
             <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
-                <a id="user" href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Zona de Usuario</a> 
-            </div>
+                <a id="user" href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500 no-underline">Zona de Usuario</a> </div>
         </div>
     </div>
 </header>
