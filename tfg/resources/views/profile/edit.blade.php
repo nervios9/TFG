@@ -1,7 +1,20 @@
+<body class="fondo">
 <x-app-layout>
-@include ('header')
-<div class="py-12">
+    
+    @include ('header')
+
+      <style>
+        header {
+    /* Ajusta las propiedades de tamaño y posicionamiento según sea necesario */
+    height: 17%;
+    width: 100%; /* o un valor específico */
+    margin: 0; /* o ajusta los márgenes según sea necesario */
+    padding: 10px; /* o ajusta el relleno según sea necesario */
+    /* Añade otras propiedades CSS según sea necesario */
+}</style>  
+
     <div class="container mt-5">
+      
         <!-- Utiliza d-flex y justify-content-end para mover el dropdown a la derecha -->
         <div class="d-flex justify-content-end">
             <div class="dropdown mt-3">
