@@ -39,7 +39,7 @@
             </tr>
             <tr>
                 <td><a href="{{ route('escritorIndex') }}" class="btn btn-secondary">Volver al listado</a></td>
-                <td><input type="submit" class="btn btn-primary" value="Crear"></td>
+                <td><input type="submit" class="btn btn-primary" style="background-color: #D95D39" value="Crear"></td>
             </tr>
         </table>
     </form>

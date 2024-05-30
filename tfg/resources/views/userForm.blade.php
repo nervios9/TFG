@@ -21,7 +21,7 @@
 </style>
 
 <div class="container center-container">
-    @isset($user)
+    @isset($user2)
         <form action="{{ route('userUpdate', ['user' => $user->id]) }}" method="POST" class="form-wrapper">
             @method('PATCH')
     @else
@@ -31,20 +31,20 @@
         <table class="table table-borderless form-table">
             <tr>
                 <td>Nombre:</td>
-                <td><input type="text" name="name" value="{{ $user->name ?? '' }}" class="form-control" required></td>
+                <td><input type="text" name="name" class="form-control" required></td>
             </tr>
             <tr>
                 <td>Correo:</td>
-                <td><input type="text" name="email" value="{{ $user->email ?? '' }}" class="form-control" required></td>
+                <td><input type="text" name="email"  class="form-control" required></td>
             </tr>
             <tr>
                 <td>Contraseña:</td>
-                <td><input type="text" name="password" value="{{ $user->password ?? '' }}" class="form-control" required></td>
+                <td><input type="text" name="password" class="form-control" required></td>
             </tr>
            
             <tr>
                 <td><a href="{{ route('userIndex') }}" class="btn btn-secondary">Volver al listado</a></td>
-                <td><input type="submit" class="btn btn-primary" value="Crear"></td>
+                <td><input type="submit" style="background-color: #D95D39"  class="btn btn-primary" value="Crear"></td>
             </tr>
         </table>
     </form>

@@ -87,10 +87,10 @@ Route::patch('/comentarios/{id}',  'ComentariosController@update')->name('update
 
 
 Route::get('userIndex', 'UserController@indexUser')->name('userIndex');
-Route::delete('/userDestroy{usuario}', 'UserController@userDestroy')->name('userDestroy');
+Route::delete('/userDestroy{user}', 'UserController@userDestroy')->name('userDestroy');
 Route::get('userCreate', 'UserController@userCreate')->name('userCreate');
 Route::post('userStore', 'UserController@userStore')->name('userStore');
-Route::patch('userUpdate/{usuario}', 'UserController@userUpdate')->name('userUpdate');
+Route::patch('userUpdate/{user}', 'UserController@userUpdate')->name('userUpdate');
 Route::get('/userEdit{id}', 'UserController@userEdit')->name('userEdit');
 
 

@@ -36,7 +36,7 @@
 <div class="container center-container">
     <div class="mb-4 text-center">
         <a href="{{ url('/backend') }}" class="btn btn-secondary mb-2">Volver atrás</a><br>
-        <a href="{{ route('escritorCreate') }}" class="btn btn-primary">Añadir nuevo Escritor</a>
+        <a href="{{ route('escritorCreate') }}" style="background-color: #D95D39" class="btn btn-primary">Añadir nuevo Escritor</a>
     </div>
     <div class="table-wrapper">
         <table class="table custom-table mx-auto">

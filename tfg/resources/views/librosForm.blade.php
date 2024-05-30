@@ -92,7 +92,7 @@
                 </tr>
                 <tr>
                     <td><a href="{{ route('librosIndex') }}">Volver al listado</a></td>
-                    <td><input type="submit" class="btn btn-primary"></td>
+                    <td><input type="submit" style="background-color: #D95D39" class="btn btn-primary"></td>
                 </tr>
             </table>
         </div>

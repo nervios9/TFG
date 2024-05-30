@@ -13,7 +13,7 @@
     }
 </style>
 
-<div class="center-container">
+<div class=" center-container">
     @isset($generos)
         <form action="{{ route('generoUpdate', ['genero' => $genero->id]) }}" method="POST">
             @method('PATCH')
@@ -22,11 +22,10 @@
     @endisset
     @csrf
 
-    <div class="card">
-        <div class="card-body">
+    
             <table class='table table-borderless'>
                 <tr>
-                    <td>Género:</td>
+                    <td><b>Género:</b></td>
                     <td><input type="text" name="genero" value="{{ $generos->genero ?? '' }}" required></td>
                 </tr>
                 <tr>
@@ -34,8 +33,6 @@
                     <td><input type="submit" class="btn btn-primary"></td>
                 </tr>
             </table>
-        </div>
-    </div>
 </form>
 </div>
 @include('footer')

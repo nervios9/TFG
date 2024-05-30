@@ -108,9 +108,9 @@ class UserController extends Controller
         return redirect()->route('userIndex');
     }
     public function userEdit($id) {
-        $bibliotecario = User::findOrFail($id);
+        $user2 = User::findOrFail($id);
 
-     return view('userForm', compact('user'));
+     return view('userForm', compact('user2'));
     }
  
 

@@ -68,7 +68,7 @@
 </style>
 <script src="/bootstrap-4.0.0-dist/js/bootstrap.js"></script>
 <header class="{{ $user->hasRole('admin') ? 'header-admin' : ($user->hasRole('bibliotecario') ? 'header-biblio' : 'header-default') }} w-100 d-flex flex-column flex-md-row justify-content-between align-items-center fixed-top">    <a href="{{ url('/') }}">
-        <img src="{{ asset('images/Logo.png') }}" alt="Logo" class="logo"></img>
+        <img src="{{ asset('images/Logo.png') }}" style="background-color: white" alt="Logo" class="logo"></img>
     </a>
 
     <div id="contenedor">
@@ -98,7 +98,7 @@
             <a class="nav-link" id="all" href="{{ url('/all') }}">Todos los libros</a>
             <a class="nav-link" id="recommend" href="{{ url('/recomendador') }}">Recomendador de libros</a>
             @hasanyrole('admin|bibliotecario')
-            <a class="nav-link" href="{{ url('/backend') }}">Gestor de Inventario</a>
+            <a class="nav-link" id="gestor" href="{{ url('/backend') }}">Gestor de Inventario</a>
         @endhasanyrole
         </div>
     </div>
@@ -109,6 +109,7 @@
     function translatePage(language) {
         const translations = {
             'es': {
+                'gestor':'Gestor de Inventario',
                 'consulta':'Hacer otra consulta',
                 'inicio':'Inicio',
                 'all':'Todos los libros',
@@ -131,6 +132,7 @@
                 'mostrarMas':'Mostrar Más'
             },
             'en': {
+                'gestor':'Inventory Management',
                 'consulta':'Do it again',
                 'inicio':'Home',
                 'all':'All books',

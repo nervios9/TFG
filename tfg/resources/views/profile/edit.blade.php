@@ -16,9 +16,9 @@
     <div class="container mt-5">
       
         <!-- Utiliza d-flex y justify-content-end para mover el dropdown a la derecha -->
-        <div class="d-flex justify-content-end">
+        <div class="d-flex justify-content-end" >
             <div class="dropdown mt-3">
-                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="btn btn-primary dropdown-toggle" style="background-color: #D95D39"   type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {{ Auth::user()->name }}
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
