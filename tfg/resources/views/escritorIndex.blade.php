@@ -10,7 +10,7 @@
         min-height: 100vh;
     }
     .table-wrapper {
-        width: 100%;
+        width: auto;
         max-width: 800px;
         margin-top: 20px;
         margin-bottom: 20px;
@@ -44,6 +44,7 @@
                 <tr>
                     <th class='border-1px'>Nombre</th>
                     <th class='border-1px'>Apellidos</th>
+                    <th class='border-1px'>Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -51,12 +52,12 @@
                     <tr>
                         <td class='border-1px'>{{$escritor->nombre}}</td>
                         <td class='border-1px'>{{$escritor->apellidos}}</td>
-                        <td class='sinbordes'>
-                            <a href="{{route('escritorEdit', $escritor->id)}}" class="btn btn-warning">Modificar</a>
-                            <form action="{{route('escritorDestroy', $escritor->id)}}" method="POST">
+                        <td class='border-1px text-center'>
+                            <a href="{{route('escritorEdit', $escritor->id)}}" class=" btn btn-warning">Modificar</a>
+                            <form action="{{route('escritorDestroy', $escritor->id)}}" class="text-center" method="POST">
                                 @csrf
                                 @method("DELETE")
-                                <input type="submit" value="Borrar" class="btn btn-danger">
+                                <input type="submit"  value="Borrar" class="text-center  btn btn-danger">
                             </form>
                         </td>
                     </tr>

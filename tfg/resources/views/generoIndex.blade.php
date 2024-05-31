@@ -21,13 +21,16 @@
         gap: 10px; /* Espacio entre botones */
     }
     .table-wrapper {
-        width: 80%;
+        width: auto;
         max-width: 800px;
         margin-top: 20px;
         margin-bottom: 20px;
     }
     .table th {
       background-color: rgb(186, 131, 75); 
+    }
+    .columna{
+        width: 200px;   
     }
 </style>
 
@@ -40,8 +43,8 @@
         <table class="table custom-table mx-auto">
             <thead>
                 <tr>
-                    <th>Géneros</th>
-                   
+                    <th class="columna border-1px">Géneros</th>
+                    <th class='columna  border-1px'>Acciones</th>
                     
                 </tr>
             </thead>
@@ -49,10 +52,10 @@
                 @foreach ($listaGeneros as $generos)
                 <tr>
                     <td>{{$generos->genero}}</td>
-                    <td class="no-border">
-                        <div class="action-buttons">
+                    <td class="border-1px">
+                        <div class=" text-center">
                             <a href="{{route('generoEdit', $generos->id)}}" class="btn btn-warning">Modificar</a>
-                            <form action="{{route('generoDestroy', $generos->id)}}" method="POST">
+                            <form action="{{route('generoDestroy', $generos->id)}}" class="text-center" method="POST">
                                 @csrf
                                 @method("DELETE")
                                 <input type="submit" value="Borrar" class="btn btn-danger">

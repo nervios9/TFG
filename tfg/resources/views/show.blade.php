@@ -76,7 +76,7 @@
                     @csrf
                     <input type="hidden" name="usuario" value="{{ Auth::user()->id }}">
                     <input type="hidden" name="libro_id" value="{{ $libro->id }}">
-                    <button type="submit" id="miBoton" class="btn btn-primary btn-custom">
+                    <button style="background-color: #D95D39" type="submit" id="miBoton" class="btn btn-primary btn-custom">
                         {{ $libroLeido ? 'Eliminar libro leído' : 'Añadir libro leído' }}
                     </button>
                 </form>

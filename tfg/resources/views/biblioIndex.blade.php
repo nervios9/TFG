@@ -10,7 +10,7 @@
         min-height: 100vh;
     }
     .table-wrapper {
-        width: 100%;
+        width: auto;
         max-width: 800px;
         margin-top: 20px;
         margin-bottom: 20px;
@@ -56,7 +56,7 @@
                         <td class='border-1px'>{{ $bibliotecario->email }}</td>
                         <td class='border-1px'>
                             <a href="{{route('biblioEdit', $bibliotecario->id)}}" class="btn btn-warning">Modificar</a>
-                            <form action="{{ route('biblioDestroy', $bibliotecario->id) }}" method="POST">
+                            <form action="{{ route('biblioDestroy', $bibliotecario->id) }}"  method="POST">
                                 @csrf
                                 @method("DELETE")
                                 <input type="submit" value="Eliminar" class="btn btn-danger">

@@ -50,6 +50,7 @@
                     <th class='border-1px'>Synopsis</th>
                     <th class='border-1px'>Genero</th>
                     <th class='border-1px'>Escritor</th>
+                    <th class='border-1px'>Acciones</th>
                   
                 </tr>
             </thead>
@@ -71,9 +72,9 @@
                         </td>
                         <td class='border-1px'>{{$libros->genero->genero}}</td>
                         <td class='border-1px'>{{ $libros->escritor->nombre }} {{ $libros->escritor->apellidos }}</td>
-                        <td class='sinbordes action-cell'>
+                        <td class='border-1px '>
                             <a href="{{route('librosEdit', $libros->id)}}" class="btn btn-warning">Modificar</a>
-                            <form action="{{route('librosDestroy', $libros->id)}}" method="POST">
+                            <form action="{{route('librosDestroy', $libros->id)}}"  method="POST">
                                 @csrf
                                 @method("DELETE")
                                 <input type="submit" value="Borrar" class="btn btn-danger">

@@ -10,7 +10,7 @@
         min-height: 100vh;
     }
     .table-wrapper {
-        width: 100%;
+        width: auto;
         max-width: 800px;
         margin-top: 20px;
         margin-bottom: 20px;
@@ -52,9 +52,9 @@
                     <tr>
                         <td class='border-1px'>{{ $user->name }}</td>
                         <td class='border-1px'>{{ $user->email }}</td>
-                        <td class='border-1px action-cell'>
+                        <td class='border-1px'>
                             <a href="{{route('userEdit', $user->id)}}" class="btn btn-warning">Modificar</a>
-                            <form action="{{ route('userDestroy', $user->id) }}" method="POST">
+                            <form action="{{ route('userDestroy', $user->id) }}" class="text-center" method="POST">
                                 @csrf
                                 @method("DELETE")
                                 <input type="submit" value="Eliminar" class="btn btn-danger">
