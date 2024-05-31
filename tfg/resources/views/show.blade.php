@@ -64,19 +64,23 @@
     }
 </style>
 
-@section('show', 'info peliculas')
-@section('content')
+
 <div class="container centered-div">
     <div class="content-wrapper">
         <div class="main-content">
             <div class="image-section">
-                <img id="imagenesPeliculas" src="{{ url('images/libros/' . $libro->imagen) }}" alt="portada libro" onerror="this.src='{{ url('images/libros/WIP.png') }}'">
-                <form method="POST" action="{{ route('librosLeidos') }}" class="mb-4">
+                <img src="{{ url('images/libros/' . $libro->imagen) }}" alt="portada libro" onerror="this.src='{{ url('images/libros/WIP.png') }}'">
+              
+                <?php $libroLeido = in_array($libro->id, $librosLeidos); ?>
+                <form method="POST" action="{{ route($libroLeido ? 'eliminarLibroLeido' : 'librosLeidos') }}" class="mb-4">
                     @csrf
                     <input type="hidden" name="usuario" value="{{ Auth::user()->id }}">
                     <input type="hidden" name="libro_id" value="{{ $libro->id }}">
-                    <button type="submit" id="miBoton" class="btn btn-primary btn-custom">Añadir libro leído</button>
+                    <button type="submit" id="miBoton" class="btn btn-primary btn-custom">
+                        {{ $libroLeido ? 'Eliminar libro leído' : 'Añadir libro leído' }}
+                    </button>
                 </form>
+          
             </div>
             <div class="details-wrapper">
                 <div class="details">
@@ -131,8 +135,6 @@
         </div>
     </div>
 </div>
-@endsection
-@yield('content')
 
 <script>
     function toggleSinopsis(libroId) {

@@ -7,8 +7,10 @@ use App\Models\Libro;
 use App\Models\Genero;
 use App\Models\Comentarios;
 use App\Models\Escritor;
+use App\Models\LibrosLeidos;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 class LibrosController extends Controller
@@ -58,13 +60,17 @@ class LibrosController extends Controller
 
     public function show($id)
     {
+
+        $usuarioId = Auth::user()->id;
+        $libros = Libro::all(); // O ajusta esto según cómo obtienes los libros
+        $librosLeidos = LibrosLeidos::where('usuario_id', $usuarioId)->pluck('libro_id')->toArray();
         // Obtener el libro específico
         $libro = Libro::findOrFail($id);
     
         // Obtener todos los comentarios asociados con el libro
         $comentarios = Comentarios::where('libro_id', $id)->get();
     
-        return view('show', compact('libro', 'comentarios'));
+        return view('show', compact('libro', 'comentarios','libros', 'librosLeidos'));
     }
 
     public function carrousel(){

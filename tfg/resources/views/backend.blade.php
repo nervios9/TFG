@@ -5,7 +5,7 @@
 <br>
 
 
-
+  {{--Al pulsar cada uno de los botones nos llevara a la ventana de configurar cada uno de los elementos--}}
 <form action = "{{route('librosIndex')}}" method="GET" class="centrado">
     @csrf
     <input type="submit" value="Libros" class="grande">

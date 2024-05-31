@@ -67,7 +67,7 @@
         <button type="submit" style="background-color: #D95D39" class="btn1 btnBorrar" id="submit">Buscar</button>
     </form>
 </div>
-
+ {{--Mostrar todos los libros en filas de  a 5 y mostrando solo 2 filas de golpe--}}
 <div class="container-centered">
     <table id="catalogoLibros">
         @foreach($listaLibros->chunk(5) as $filaIndex => $fila)
@@ -83,6 +83,7 @@
         @endforeach
     </table>
     <div class="d-flex justify-content-center mt-3">
+         {{--Al pulsar el boton nos aparecceran 2 filas mas--}}
         <button id="mostrarMas" style="background-color: #D95D39" class="btn1 btn-primary {{ $listaLibros->count() > 10 ? '' : 'd-none' }}">Mostrar más</button>
     </div>
 </div>
@@ -99,7 +100,7 @@
                 fila.classList.remove('d-none');
             });
 
-            filasMostradas += 2;
+            filasMostradas += 2;//Añade dos filas mas a las filas que se muestran
 
             if (filasMostradas >= filas.length) {
                 mostrarMasBtn.classList.add('d-none');

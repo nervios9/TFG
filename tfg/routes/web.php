@@ -50,8 +50,10 @@ Route::get('/backend','LibrosController@backend')->name('backend');
 Route::get('/buscador','LibrosController@find')->name('buscador');
 Route::get('/recomend','LibrosController@recomend')->name('recomend');
 Route::get('/recomendador','LibrosController@recomendador')->name('recomendador');
-//Route::post('/eliminarLibrosLeidos', 'LibrosLeidosController@eliminarLibrosLeidos')->name('eliminarLibrosLeidos');
+
 Route::post('/librosLeidos', 'LibrosLeidosController@librosLeidos')->name('librosLeidos');
+Route::post('/eliminarLibroLeido', 'LibrosLeidosController@eliminarLibroLeido')->name('eliminarLibroLeido');
+
 
 Route::get('/librosIndex', 'librosController@backend')->name('librosIndex');
 Route::get('/librosEdit{id}', 'librosController@edit')->name('librosEdit');
