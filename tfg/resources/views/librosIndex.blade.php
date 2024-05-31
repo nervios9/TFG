@@ -74,7 +74,7 @@
                         <td class='border-1px'>{{ $libros->escritor->nombre }} {{ $libros->escritor->apellidos }}</td>
                         <td class='border-1px '>
                             <a href="{{route('librosEdit', $libros->id)}}" class="btn btn-warning">Modificar</a>
-                            <form action="{{route('librosDestroy', $libros->id)}}"  method="POST">
+                            <form action="{{route('librosDestroy', $libros->id)}}" class="text-center"  method="POST">
                                 @csrf
                                 @method("DELETE")
                                 <input type="submit" value="Borrar" class="btn btn-danger">

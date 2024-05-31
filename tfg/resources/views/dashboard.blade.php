@@ -15,6 +15,9 @@
         .imagenesLibros {
             padding: 10px; /* Espaciado horizontal entre las celdas */
         }
+        .btn{
+            border: none;
+        }
     </style>
 
 <body class="fondo">
@@ -46,7 +49,9 @@
                         <tr>
                             <td colspan="5" class="text-center">{{ __("Libros leídos:") }}</td>
                         </tr>
+                        {{--Si has añadido libros leidos los mostrara  en filas de a 5--}}
                         @foreach($listaLibrosLeidos->chunk(5) as $filaIndex => $fila)
+                        {{--Muestra un maximo de dos filas de golpe--}}
                             <tr class="filaLibros {{ $filaIndex >= 2 ? 'd-none' : '' }}">
                                 @foreach($fila as $librosLeidos)
                                     <td class="imagenesLibros">
@@ -61,7 +66,32 @@
                 </div>
             </div>
         </div>
+        <div class="d-flex justify-content-center mt-3">
+            {{--Al pulsar el boton nos aparecceran 2 filas mas--}}
+           <button id="mostrarMas" style="background-color: #D95D39" class="btn btn-primary {{ $listaLibrosLeidos->count() > 10 ? '' : 'd-none' }}">Mostrar más</button>
+       </div>
     </div>
     @include('footer')
 </body>
 </html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const filas = document.querySelectorAll('.filaLibros');
+        const mostrarMasBtn = document.getElementById('mostrarMas');
+        let filasMostradas = 2; // Número inicial de filas mostradas
+
+        mostrarMasBtn.addEventListener('click', () => {
+            const filasOcultas = Array.from(filas).slice(filasMostradas, filasMostradas + 2);
+            filasOcultas.forEach(fila => {
+                fila.classList.remove('d-none');
+            });
+
+            filasMostradas += 2;//Añade dos filas mas a las filas que se muestran
+
+            if (filasMostradas >= filas.length) {
+                mostrarMasBtn.classList.add('d-none');
+            }
+        });
+    });
+</script>

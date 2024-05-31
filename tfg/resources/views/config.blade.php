@@ -18,28 +18,6 @@
 
 <h1>Configuracion de usuario</h1>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
 
 </html>

@@ -30,7 +30,7 @@
         flex-direction: column;
     }
     table {
-        width: 60%;
+        width: auto;
         text-align: center;
         border-collapse: collapse;
     }
@@ -73,14 +73,18 @@
 
 <div class="container-centered">
     <h1>Buscador:</h1>
+{{--enlace para hacer otra consulta--}}
     <a href="{{ url('/all') }}">Hacer otra consulta</a>
     <table id="catalogoLibros">
+        {{--en caso de no haber libros segun nuestras caracteristicas de busqueda nos mostrara el texto de que no hay libros--}}
         @if($listaLibros->isEmpty())
             <tr>
                 <td colspan="5" class="no-results">No hay libros que coincidan con esta búsqueda.</td>
             </tr>
         @else
+        {{--Si hay resultados los muestra en filas de 5--}}
             @foreach($listaLibros->chunk(5) as $filaIndex => $fila)
+                {{--Muestra un maximo de dos filas a la vez--}}
                 <tr class="filaLibros {{ $filaIndex >= 2 ? 'd-none' : '' }}">
                     @foreach($fila as $libros)
                         <td class="imagenesLibros">
@@ -110,7 +114,7 @@
                 fila.classList.remove('d-none');
             });
 
-            filasMostradas += 2;
+            filasMostradas += 2;//Filas extra añadidas
 
             if (filasMostradas >= filas.length) {
                 mostrarMasBtn.classList.add('d-none');

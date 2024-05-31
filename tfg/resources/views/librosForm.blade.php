@@ -43,7 +43,7 @@
                 </tr>
                 <tr>
                     <td>Imagen:</td>
-                    <td><input type="file" name="imagen" class="form-control"></td>
+                    <td><input type="file" name="imagen" class="form-control" required></td>
                 </tr>
                 <tr>
                     <td>Synopsis:</td>

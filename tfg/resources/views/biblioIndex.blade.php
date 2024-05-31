@@ -50,6 +50,7 @@
                 </tr>
             </thead>
             <tbody>
+                {{--Muestra todos los usuarios con rol de bibliotecario--}}
                 @foreach ($bibliotecarios as $bibliotecario)
                     <tr>
                         <td class='border-1px'>{{ $bibliotecario->name }}</td>
