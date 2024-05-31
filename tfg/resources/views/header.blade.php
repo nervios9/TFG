@@ -110,6 +110,15 @@
     function translatePage(language) {
         const translations = {
             'es': {
+                'copy':'© {{ date("Y") }} Libro antes que destino. Todos los derechos reservados.',
+                'telefono':'Teléfono: +34 976 30 08 04',
+                'nombre':'Usuario',
+                'autor':'Autor',
+                'genero':'Género',
+                'estreno':'Fecha de estreno',
+                'paginas':'Páginas',
+                'sinopsis':'Sinopsis',
+                'contacto':'Contacto',
                 'gestor':'Gestor de Inventario',
                 'consulta':'Hacer otra consulta',
                 'inicio':'Inicio',
@@ -133,6 +142,15 @@
                 'mostrarMas':'Mostrar Más'
             },
             'en': {
+                'copy':'© {{ date("Y") }} Libro antes que destino. All Rigths reserved.',
+                'telefono':'Phone: +34 976 30 08 04',
+                'nombre':'User',
+                'autor':'Author',
+                'genero':'Génre',
+                'estreno':'Release Date',
+                'paginas':'Páges',
+                'sinopsis':'Synopsis',
+                'contacto':'Contact Information',
                 'gestor':'Inventory Management',
                 'consulta':'Do it again',
                 'inicio':'Home',

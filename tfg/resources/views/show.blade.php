@@ -85,12 +85,12 @@
             <div class="details-wrapper">
                 <div class="details">
                     <h1>{{ $libro->nombre }}</h1>
-                    <p><b>Autor:</b> {{ $libro->escritor->nombre }} {{ $libro->escritor->apellidos }}</p>
-                    <p><b>Género:</b> {{ $libro->genero->genero }}</p>
-                    <p><b>Fecha de estreno:</b> {{ $libro->fecha_salida }}</p>
-                    <p><b>Páginas:</b> {{ $libro->paginas }}</p>
+                    <p><b id="autor" >Autor:</b> {{ $libro->escritor->nombre }} {{ $libro->escritor->apellidos }}</p>
+                    <p><b id="genero">Género:</b> {{ $libro->genero->genero }}</p>
+                    <p><b id="estreno">Fecha de estreno:</b> {{ $libro->fecha_salida }}</p>
+                    <p><b id="paginas">Páginas:</b> {{ $libro->paginas }}</p>
                     <p class="sinopsis">
-                        <b>Sinopsis:</b>
+                        <b id="sinopsis">Sinopsis:</b>
                         <span id="sinopsis-{{ $libro->id }}">
                             {{ implode(' ', array_slice(explode(' ', $libro->synopsis), 0, 30)) }}
                             @if(str_word_count($libro->synopsis) > 30)
@@ -106,11 +106,11 @@
                         <input type="hidden" name="comment_id" id="comment_id">
                         <input type="hidden" name="_method" value="POST" id="formMethod">
                         <div class="input-row">
-                            <label for="nombre" class="form-label">Usuario:</label>
+                            <label for="nombre" id="nombre" class="form-label">Usuario:</label>
                             <input class="form-control" type="text" name="nombre" id="nombre" readonly value="{{ Auth::user()->name }}" required>
                         </div>
                         <div class="input-row">
-                            <label for="comentario" class="form-label">Comentario:</label>
+                            <label for="comentario" id="comentario" class="form-label">Comentario:</label>
                             <textarea rows="6" class="form-control" name="comentario" id="comentario" placeholder="Agregue su comentario" required style="resize: none;"></textarea>
                         </div>
                         <input type="hidden" name="usuario" value="{{ Auth::user()->id }}">
