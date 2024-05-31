@@ -110,6 +110,7 @@
     function translatePage(language) {
         const translations = {
             'es': {
+                'texto':'El libro recomendado es: {{$libro->nombre}}',
                 'copy':'© {{ date("Y") }} Libro antes que destino. Todos los derechos reservados.',
                 'telefono':'Teléfono: +34 976 30 08 04',
                 'nombre':'Usuario',
@@ -142,6 +143,7 @@
                 'mostrarMas':'Mostrar Más'
             },
             'en': {
+                'texto':'The recommended book is: {{$libro->nombre}}',
                 'copy':'© {{ date("Y") }} Libro antes que destino. All Rigths reserved.',
                 'telefono':'Phone: +34 976 30 08 04',
                 'nombre':'User',
