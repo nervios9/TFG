@@ -21,4 +21,3 @@
 <a id="consulta" class="d-flex justify-content-center align-items-center centered-div" href="{{url('/recomendador')}}">Hacer otra consulta</a>
 
 @include('footer')
-3
