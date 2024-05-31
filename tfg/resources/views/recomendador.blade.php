@@ -12,7 +12,7 @@
     <form method="GET" action="{{ route('recomend') }}" class="d-flex">
         @csrf
         <select name="opcion" class="form-select mr-2">
-            <option value="" selected>Selecciona un género</option>
+          
             @foreach($listaGeneros as $genero)
                 <option value="{{ $genero->id }}">{{ $genero->genero }}</option>
             @endforeach

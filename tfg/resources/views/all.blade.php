@@ -33,7 +33,7 @@
     .d-none {
         display: none;
     }
-    .btn1 {
+    .btn1 { /*Añadir configuracion para diferenciar los botones*/
         display: inline-block;
         padding: 10px 20px;
         margin-top: 20px;
@@ -45,15 +45,21 @@
         cursor: pointer;
         transition: background-color 0.3s;
     }
+    .select {
+    width: 150px; 
+    max-width: 100%; /* Ajusta el tamaño del select */
+}
 </style>
 
-<div class=" {{ $user->hasRole('admin') ? 'body-admin' : 'body-default' }} container d-flex justify-content-center mt-3 align-items-center centered-div">
+<div class="container d-flex justify-content-center mt-3 align-items-center centered-div">
     <h1 id="catalogo">Catalogo de Libros</h1>
     <form method="GET" action="{{ route('buscador') }}">
         @csrf
     </div>
+
     <div class="container d-flex justify-content-center align-items-center centered-div">
-        <select name="opcion">
+        <select name="opcion" class="form-select select">
+            {{--Mostrar todos los generos en un desplegable para poder elegir el genero elegido--}}
             @foreach($listaGeneros as $genero)
                 <option value="{{ $genero->id }}">{{ $genero->genero }}</option>
             @endforeach

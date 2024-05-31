@@ -67,6 +67,7 @@
 }
 </style>
 <script src="/bootstrap-4.0.0-dist/js/bootstrap.js"></script>
+{{-- En caso de que el usuario no tenga rol basico se le asignara un color distinto al header para diferenciarlos--}}
 <header class="{{ $user->hasRole('admin') ? 'header-admin' : ($user->hasRole('bibliotecario') ? 'header-biblio' : 'header-default') }} w-100 d-flex flex-column flex-md-row justify-content-between align-items-center fixed-top">    <a href="{{ url('/') }}">
         <img src="{{ asset('images/Logo.png') }}" style="background-color: white" alt="Logo" class="logo"></img>
     </a>
