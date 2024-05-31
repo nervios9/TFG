@@ -115,7 +115,7 @@
                         </div>
                         <input type="hidden" name="usuario" value="{{ Auth::user()->id }}">
                         <input type="hidden" name="libro_id" value="{{ $libro->id }}">
-                        <button id="enviar" type="submit" class="btn btn-success">Enviar</button>
+                        <button id="enviar" style="background-color: #D95D39" type="submit" class="btn btn-success">Enviar</button>
                     </form>
                     <h2 id="comentarios">Comentarios</h2>
                     @foreach ($comentarios as $comentario)

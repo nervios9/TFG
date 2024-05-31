@@ -7,6 +7,9 @@
           /* Color de fondo de ejemplo */
           margin: 0 auto; /* Centrar horizontalmente */
   }
+  .btn{
+    border: none;
+  }
 </style>
 <div class=" libros container d-flex justify-content-center align-items-center centered-div">
     <form method="GET" action="{{ route('recomend') }}" class="d-flex">

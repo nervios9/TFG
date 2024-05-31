@@ -21,10 +21,10 @@
 </style>
 
 <div class="container center-container">
-    @isset($bibliotecario)
+    @isset($bibliotecario){{--Si estamos modificando un usuario bibliorecario entrara aqui--}}
         <form action="{{ route('biblioUpdate', ['bibliotecario' => $bibliotecario->id]) }}" method="POST" class="form-wrapper">
             @method('PATCH')
-    @else
+    @else{{--Si estamos creando un usuario con rol de bibliotecario entrara aqui--}}
         <form action="{{ route('biblioStore') }}" method="POST" class="form-wrapper">
     @endisset
     @csrf
