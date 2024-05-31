@@ -13,22 +13,22 @@ class GenerosTableSeeder extends Seeder
     public function run(): void
     {
         DB::table('generos')->insert([
-            'genero' => 'fantasia',
+            'genero' => 'Fantasia',
         ]);
         DB::table('generos')->insert([
-            'genero' => 'romance',
+            'genero' => 'Romance',
         ]);
         DB::table('generos')->insert([
-            'genero' => 'terror',
+            'genero' => 'Terror',
         ]);
         DB::table('generos')->insert([
-            'genero' => 'historicos',
+            'genero' => 'Historicos',
         ]);
         DB::table('generos')->insert([
-            'genero' => 'ciencia ficcion',
+            'genero' => 'Ciencia ficcion',
         ]);
         DB::table('generos')->insert([
-            'genero' => 'novela negra',
+            'genero' => 'Novela negra',
      
         ]);DB::table('generos')->insert([
             'genero' => 'Novela',
